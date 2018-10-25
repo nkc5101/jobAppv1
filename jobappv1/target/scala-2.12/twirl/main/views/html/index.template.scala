@@ -32,8 +32,8 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 Seq[Any](format.raw/*1.4*/("""
 
-"""),_display_(/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
-  """),format.raw/*4.3*/("""<h1>Welcome to Play!</h1>
+"""),_display_(/*3.2*/main("Job Search")/*3.20*/ {_display_(Seq[Any](format.raw/*3.22*/("""
+  """),format.raw/*4.3*/("""<h1>Welcome to Job Search!</h1>
 """)))}),format.raw/*5.2*/("""
 """))
       }
@@ -51,10 +51,10 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 24 12:38:41 EDT 2018
+                  DATE: Wed Oct 24 13:24:21 EDT 2018
                   SOURCE: C:/sbt/jobappv1/app/views/index.scala.html
-                  HASH: e7b67f9143e77fd41846670f700f7278d5705eda
-                  MATRIX: 941->1|1037->3|1067->8|1098->31|1137->33|1167->37|1224->65
+                  HASH: 36d89f7604c94470058677867c296d306e68fb3b
+                  MATRIX: 941->1|1037->3|1067->8|1093->26|1132->28|1162->32|1225->66
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4|37->5
                   -- GENERATED --
               */
