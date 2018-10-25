@@ -51,8 +51,13 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
+<<<<<<< Updated upstream
                   DATE: Thu Oct 25 13:50:34 EDT 2018
                   SOURCE: C:/Users/KEN/Desktop/Penn State/Fall 18/IST 411/Project/jobAppv1/jobappv1/app/views/index.scala.html
+=======
+                  DATE: Thu Oct 25 14:24:18 EDT 2018
+                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/index.scala.html
+>>>>>>> Stashed changes
                   HASH: 36d89f7604c94470058677867c296d306e68fb3b
                   MATRIX: 941->1|1037->3|1067->8|1093->26|1132->28|1162->32|1225->66
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4|37->5

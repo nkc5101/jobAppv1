@@ -11,6 +11,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.List;
 
+import static play.libs.Scala.asScala;
+
 @Singleton
 public class ProfileController extends Controller{
   private final Form<ProfileData> form;
@@ -23,15 +25,13 @@ public class ProfileController extends Controller{
   }
 
   public Result login(){
-    return ok(views.html.login.render());
+    return ok(views.html.index.render());
   }
 
   public Result createProfile(){
     final Form<ProfileData> boundForm = form.bindFromRequest();
 
     if(boundForm.hasErrors()){
-      play.logger.ALogger logger = play.Logger.of(getClass());
-      logger.error("errors = {}", boundForm.errors());
       return badRequest(views.html.listProfiles.render(asScala(profiles), boundForm));
     } else {
       ProfileData data = boundForm.get();
@@ -48,7 +48,7 @@ public class ProfileController extends Controller{
   public Result getProfile(int id){
     Profile returnedProfile = profiles.get(id);
     if(returnedProfile == null){
-      return notFound(view.html.login.render());
+      return notFound(views.html.login.render());
     } else {
       return redirect(routes.ProfileController.home());
     }

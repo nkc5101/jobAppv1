@@ -1,5 +1,7 @@
 package controllers;
 
+import play.data.validation.Constraints;
+
 public class ProfileData{
   @Constraints.Required
   private String firstName;
@@ -15,7 +17,7 @@ public class ProfileData{
   private String username;
 
   @Constraints.Required
-  private Sting password;
+  private String password;
 
-  
+
 }

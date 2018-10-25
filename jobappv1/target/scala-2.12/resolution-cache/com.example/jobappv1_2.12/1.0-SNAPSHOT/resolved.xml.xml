@@ -4,7 +4,11 @@
 		module="jobappv1_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
+<<<<<<< Updated upstream
 		publication="20181025135013"
+=======
+		publication="20181025142354"
+>>>>>>> Stashed changes
 	>
 		<description>
 		jobAppv1

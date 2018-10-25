@@ -6,7 +6,7 @@
 GET     /                           controllers.ProfileController.login()
 
 #Profiles
-POST    /                           controllers.ProfileControllers.
+POST    /                           controllers.ProfileController.login()
 POST    /Profiles                   controllers.ProfileController.createProfile()
 POST    /profiles/:id               controllers.ProfileController.getProfile(id:Int)
 
