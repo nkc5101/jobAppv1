@@ -1,5 +1,15 @@
 package controllers;
 
+import models.Profile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import play.data.Form;
+import play.data.FormFactory;
+import play.mvc.*;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import java.util.List;
 
 @Singleton
 public class ProfileController extends Controller{
@@ -9,6 +19,38 @@ public class ProfileController extends Controller{
   @Inject
   public ProfileController(FormFactory formFactory){
     this.form = formFactory.form(ProfileData.class);
-    
+    this.profiles = com.google.common.collect.Lists.newArrayList(new Profile("Joe", "Shmoe", "username", "password", 22 ));
+  }
+
+  public Result login(){
+    return ok(views.html.login.render());
+  }
+
+  public Result createProfile(){
+    final Form<ProfileData> boundForm = form.bindFromRequest();
+
+    if(boundForm.hasErrors()){
+      play.logger.ALogger logger = play.Logger.of(getClass());
+      logger.error("errors = {}", boundForm.errors());
+      return badRequest(views.html.listProfiles.render(asScala(profiles), boundForm));
+    } else {
+      ProfileData data = boundForm.get();
+      profiles.add(new Profile(data.getFirstName(), data.getLastName(), data.getUsername(), data.getPassword(), data.getAge()));
+      flash("info", "Profile added!");
+      return redirect(routes.ProfileController.login());
+    }
+  }
+
+  public Result home(){
+    return ok(views.html.index.render());
+  }
+
+  public Result getProfile(int id){
+    Profile returnedProfile = profiles.get(id);
+    if(returnedProfile == null){
+      return notFound(view.html.login.render());
+    } else {
+      return redirect(routes.ProfileController.home());
+    }
   }
 }

@@ -2,11 +2,11 @@ package models;
 
 public class Profile{
 
-  private String firstName;
-  private String lastName;
-  private String username;
-  private String password;
-  private int age;
+  public String firstName;
+  public String lastName;
+  public String username;
+  public String password;
+  public int age;
 
   public Profile(String firstName, String lastName, String username, String password, int age){
     this.firstName = firstName;
