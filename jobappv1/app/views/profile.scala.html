@@ -1,21 +1,23 @@
-@(title: String)(content: Html)
+@(first: String) @(last: String) @(id: String) @(age: String)
+
+@main("Your Profile Page")
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/profile.css")">
+    <style type="text/css">
+      #person-stats {background-color:lightgray; color: black;}
+      #person-bio {background-color: gray; color: white;}
+    </style>
   </head>
   <body>
     <div id="person-stats">
-      <h1>First Last</h1>
-      <img></img>
-      <h2>User ID</h2>
-      <h3>Universities, Degrees, Certificates, Qualifications</h3>
+      <h4>Name: </h4><h1>@first @last</h1>
+      <h4>User ID: </h4><h2>@id</h2>
+      <h4>Age: </h4><h2>@age</h2>
     </div>
     <div id="person-bio">
       <p>Biography:</p>
-      <p>...</p>
-      <p>Skills:</p>
       <p>...</p>
     </div>
   </body>
