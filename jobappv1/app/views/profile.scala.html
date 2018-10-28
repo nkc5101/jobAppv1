@@ -1,6 +1,6 @@
-@(first: String) @(last: String) @(id: String) @(age: String)
+@(profile: Profile)
 
-@main("Your Profile Page")
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,9 +12,9 @@
   </head>
   <body>
     <div id="person-stats">
-      <h4>Name: </h4><h1>@first @last</h1>
-      <h4>User ID: </h4><h2>@id</h2>
-      <h4>Age: </h4><h2>@age</h2>
+      <h4>Name: </h4><h1>@(profile.firstName + " " + profile.lastName)</h1>
+      <h4>Age: </h4><h2>@(profile.age)</h2>
+      <h4>Password: </h4><h2>@(profile.password)</<h2>
     </div>
     <div id="person-bio">
       <p>Biography:</p>
@@ -22,5 +22,3 @@
     </div>
   </body>
 <html>
-
-  

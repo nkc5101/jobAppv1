@@ -33,8 +33,33 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*1.4*/("""
 
 """),_display_(/*3.2*/main("Job Search")/*3.20*/ {_display_(Seq[Any](format.raw/*3.22*/("""
-  """),format.raw/*4.3*/("""<h1>Welcome to Job Search!</h1>
-""")))}),format.raw/*5.2*/("""
+
+"""),format.raw/*5.1*/("""<html>
+  <head>
+    <HTA:application
+      APPLICATIONNAME="Job Search"
+      SYSMENU="yes">
+    <title>Job Search</title>
+    <style type="text/css">
+      body """),format.raw/*12.12*/("""{"""),format.raw/*12.13*/("""background-color:lightsteelblue;"""),format.raw/*12.45*/("""}"""),format.raw/*12.46*/("""
+      """),format.raw/*13.7*/("""p """),format.raw/*13.9*/("""{"""),format.raw/*13.10*/("""font:bold 18px arial;"""),format.raw/*13.31*/("""}"""),format.raw/*13.32*/("""
+    """),format.raw/*14.5*/("""</style>
+    <script language="javascript" type="text/javascript">
+      window.resizeTo(640,480);
+    </script>
+  </head>
+  <body>
+    <p>Welcome to Job Search!!!<br   /><br   />Group 10 </p>
+    <form>
+      Username:<br /> <input name="Username" type="text" /><br />
+      Password:<br /> <input name="Password" type="text" /><br />
+      Comfirm Password:<br /> <input name="Comfirm Password" type="text"/><br />
+      Email Address:<br /> <input name="Email Address" type="text" />
+    </form>
+    <p style="text-align: left;"><button type="button">Submit</button> <button type="button">Back</button></p>
+  <body>
+</html>
+""")))}),format.raw/*30.2*/("""
 """))
       }
     }
@@ -51,16 +76,11 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-<<<<<<< Updated upstream
-                  DATE: Thu Oct 25 13:50:34 EDT 2018
-                  SOURCE: C:/Users/KEN/Desktop/Penn State/Fall 18/IST 411/Project/jobAppv1/jobappv1/app/views/index.scala.html
-=======
-                  DATE: Thu Oct 25 14:24:18 EDT 2018
-                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/index.scala.html
->>>>>>> Stashed changes
-                  HASH: 36d89f7604c94470058677867c296d306e68fb3b
-                  MATRIX: 941->1|1037->3|1067->8|1093->26|1132->28|1162->32|1225->66
-                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|37->5
+                  DATE: Sun Oct 28 14:40:21 EDT 2018
+                  SOURCE: C:/sbt/jobappv1/app/views/index.scala.html
+                  HASH: 127ab10a8358fe1cd54b32bb896f48bcdc071884
+                  MATRIX: 941->1|1037->3|1067->8|1093->26|1132->28|1162->32|1359->201|1388->202|1448->234|1477->235|1512->243|1541->245|1570->246|1619->267|1648->268|1681->274|2355->918
+                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|44->12|44->12|44->12|44->12|45->13|45->13|45->13|45->13|45->13|46->14|62->30
                   -- GENERATED --
               */
           

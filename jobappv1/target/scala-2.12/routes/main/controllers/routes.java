@@ -1,11 +1,6 @@
 // @GENERATOR:play-routes-compiler
-<<<<<<< Updated upstream
-// @SOURCE:C:/Users/KEN/Desktop/Penn State/Fall 18/IST 411/Project/jobAppv1/jobappv1/conf/routes
-// @DATE:Thu Oct 25 13:50:33 EDT 2018
-=======
-// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
-// @DATE:Thu Oct 25 14:27:52 EDT 2018
->>>>>>> Stashed changes
+// @SOURCE:C:/sbt/jobappv1/conf/routes
+// @DATE:Sun Oct 28 15:36:40 EDT 2018
 
 package controllers;
 

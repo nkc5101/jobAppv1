@@ -68,13 +68,8 @@ Seq[Any](format.raw/*7.32*/("""
 
               /*
                   -- GENERATED --
-<<<<<<< Updated upstream
-                  DATE: Thu Oct 25 13:50:34 EDT 2018
-                  SOURCE: C:/Users/KEN/Desktop/Penn State/Fall 18/IST 411/Project/jobAppv1/jobappv1/app/views/main.scala.html
-=======
-                  DATE: Thu Oct 25 14:24:18 EDT 2018
-                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/main.scala.html
->>>>>>> Stashed changes
+                  DATE: Sun Oct 28 14:40:21 EDT 2018
+                  SOURCE: C:/sbt/jobappv1/app/views/main.scala.html
                   HASH: 1c6ff78675beee071e369b305cd8e888a02716d8
                   MATRIX: 1211->266|1336->296|1366->300|1449->408|1486->418|1521->426|1547->431|1637->494|1652->500|1715->541|1804->603|1819->609|1880->648|1945->776|1983->787|2011->794|2050->806|2091->820|2106->826|2167->866
                   LINES: 33->7|38->7|40->9|43->12|44->13|44->13|44->13|45->14|45->14|45->14|46->15|46->15|46->15|49->19|50->20|50->20|52->22|52->22|52->22|52->22

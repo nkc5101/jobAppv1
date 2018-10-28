@@ -7,7 +7,6 @@ public class ProfileData{
   private String firstName;
 
   @Constraints.Min(0)
-  @Constraints.Required
   private int age;
 
   @Constraints.Required
@@ -19,5 +18,43 @@ public class ProfileData{
   @Constraints.Required
   private String password;
 
+  public void setFirstName(String firstName){
+    this.firstName = firstName;
+  }
 
+  public void setLastName(String LastName){
+    this.lastName = LastName;
+  }
+
+  public void setUsername(String username){
+    this.username = username;
+  }
+
+  public void setPassword(String password){
+    this.password = password;
+  }
+
+  public void setAge(int age){
+    this.age = age;
+  }
+
+  public int getAge(){
+    return age;
+  }
+
+  public String getPassword(){
+    return password;
+  }
+
+  public String getUsername(){
+    return username;
+  }
+
+  public String getLastName(){
+    return lastName;
+  }
+
+  public String getFirstName(){
+    return firstName;
+  }
 }

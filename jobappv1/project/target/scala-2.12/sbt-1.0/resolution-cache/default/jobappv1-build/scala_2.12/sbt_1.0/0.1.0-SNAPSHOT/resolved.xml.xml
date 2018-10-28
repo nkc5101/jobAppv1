@@ -4,11 +4,7 @@
 		module="jobappv1-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-<<<<<<< Updated upstream
-		publication="20181025134943"
-=======
-		publication="20181025142315"
->>>>>>> Stashed changes
+		publication="20181028143954"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

@@ -1,17 +1,3 @@
-<<<<<<< Updated upstream
-[0m[[0m[31merror[0m] [0m[0mC:\Users\KEN\Desktop\Penn State\Fall 18\IST 411\Project\jobAppv1\jobappv1\app\controllers\ProfileController.java:5:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Controller[0m
-[0m[[0m[31merror[0m] [0m[0mpublic class ProfileController extends Controller{[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\KEN\Desktop\Penn State\Fall 18\IST 411\Project\jobAppv1\jobappv1\app\controllers\ProfileController.java:4:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Singleton[0m
-[0m[[0m[31merror[0m] [0m[0m@Singleton[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\KEN\Desktop\Penn State\Fall 18\IST 411\Project\jobAppv1\jobappv1\app\controllers\ProfileController.java:6:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Form[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ProfileController[0m
-[0m[[0m[31merror[0m] [0m[0m  private final Form<ProfileData> form;[0m
-=======
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\ProfileController.java:35:1:  error: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m      return badRequest(views.html.listProfiles.render(asScala(profiles), boundForm));[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^  symbol:   class listProfiles[0m
-[0m[[0m[31merror[0m] [0m[0m  location: package views.html[0m
->>>>>>> Stashed changes
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\controllers\ProfileController.java:53:1:  error: ';' expected[0m
+[0m[[0m[31merror[0m] [0m[0m      return ok(views.html.profile.render(returnedProfile))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                           ^1 error[0m

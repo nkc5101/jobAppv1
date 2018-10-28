@@ -1,11 +1,6 @@
 // @GENERATOR:play-routes-compiler
-<<<<<<< Updated upstream
-// @SOURCE:C:/Users/KEN/Desktop/Penn State/Fall 18/IST 411/Project/jobAppv1/jobappv1/conf/routes
-// @DATE:Thu Oct 25 13:50:33 EDT 2018
-=======
-// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
-// @DATE:Thu Oct 25 14:27:52 EDT 2018
->>>>>>> Stashed changes
+// @SOURCE:C:/sbt/jobappv1/conf/routes
+// @DATE:Sun Oct 28 15:36:40 EDT 2018
 
 package router
 
@@ -46,8 +41,8 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.ProfileController.login()"""),
     ("""POST""", this.prefix, """controllers.ProfileController.login()"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """Profiles""", """controllers.ProfileController.createProfile()"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles/""" + "$" + """id<[^/]+>""", """controllers.ProfileController.getProfile(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles""", """controllers.ProfileController.createProfile()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles/""" + "$" + """id<[^/]+>""", """controllers.ProfileController.getProfile(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -94,7 +89,7 @@ class Routes(
 
   // @LINE:10
   private[this] lazy val controllers_ProfileController_createProfile2_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("Profiles")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("profiles")))
   )
   private[this] lazy val controllers_ProfileController_createProfile2_invoker = createInvoker(
     ProfileController_1.createProfile(),
@@ -104,14 +99,14 @@ class Routes(
       "createProfile",
       Nil,
       "POST",
-      this.prefix + """Profiles""",
+      this.prefix + """profiles""",
       """""",
       Seq()
     )
   )
 
   // @LINE:11
-  private[this] lazy val controllers_ProfileController_getProfile3_route = Route("POST",
+  private[this] lazy val controllers_ProfileController_getProfile3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("profiles/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_ProfileController_getProfile3_invoker = createInvoker(
@@ -121,7 +116,7 @@ class Routes(
       "controllers.ProfileController",
       "getProfile",
       Seq(classOf[Int]),
-      "POST",
+      "GET",
       this.prefix + """profiles/""" + "$" + """id<[^/]+>""",
       """""",
       Seq()

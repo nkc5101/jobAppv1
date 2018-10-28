@@ -32,7 +32,7 @@ public class ProfileController extends Controller{
     final Form<ProfileData> boundForm = form.bindFromRequest();
 
     if(boundForm.hasErrors()){
-      return badRequest(views.html.listProfiles.render(asScala(profiles), boundForm));
+      return badRequest(views.html.listProfiles.render(form, profiles));
     } else {
       ProfileData data = boundForm.get();
       profiles.add(new Profile(data.getFirstName(), data.getLastName(), data.getUsername(), data.getPassword(), data.getAge()));
@@ -50,7 +50,7 @@ public class ProfileController extends Controller{
     if(returnedProfile == null){
       return notFound(views.html.login.render());
     } else {
-      return redirect(routes.ProfileController.home());
+      return ok(views.html.profile.render(returnedProfile));
     }
   }
 }
