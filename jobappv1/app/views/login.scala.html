@@ -1,7 +1,7 @@
 @(form : Form[ProfileLogin])
 
 <html>
-@helper.form(routes.ProfileController.authenticate){
+@helper.form(action = helper.CSRF(routes.ProfileController.authenticate)){
   <h1>Sign in</h1>
    <p>
        <input type="text" name="username" placeholder="Username" value="@form("username").value">
