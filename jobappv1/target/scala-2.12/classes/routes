@@ -6,11 +6,11 @@
 GET     /                           controllers.ProfileController.login()
 
 #Profiles
-POST    /                           controllers.ProfileController.login()
-GET    /profiles/create                   controllers.ProfileController.viewCreateProfile()
-POST  /profiles/createUser         controllers.ProfileController.createProfile()
-GET    /profiles/:id               controllers.ProfileController.getProfile(id:Int)
-POST    /profiles                  controllers.ProfileController.authenticate()
+POST   /                           controllers.ProfileController.login()
+GET    /profiles/create             controllers.ProfileController.viewCreateProfile()
+POST   /profiles/createUser          controllers.ProfileController.createProfile()
+GET    /profiles/:id                controllers.ProfileController.getProfile(id:Int)
+POST   /profiles                   controllers.ProfileController.authenticate()
 
 
 # Map static resources from the /public folder to the /assets URL path

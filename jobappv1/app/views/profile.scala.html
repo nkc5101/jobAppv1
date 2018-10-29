@@ -12,12 +12,15 @@
   </head>
   <body>
     <div id="person-stats">
-      <h4>Name: </h4><h1>@(profile.firstName + " " + profile.lastName)</h1>
-      <h4>Age: </h4><h2>@(profile.age)</h2>
-      <h4>Password: </h4><h2>@(profile.password)</<h2>
+
+      <h4>Name: </h4>
+      <p>@(profile.firstName + " " + profile.lastName)</p>
+
+      <h4>Age: </h4><p>@(profile.age)</p>
+      <h4>Password: </h4><p>@(profile.password)</<p>
     </div>
     <div id="person-bio">
-      <p>Biography:</p>
+      <h4>Biography:</h4>
       <p>@(profile.biography)</p>
     </div>
   </body>
