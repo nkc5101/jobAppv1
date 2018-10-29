@@ -18,6 +18,9 @@ public class ProfileData{
   @Constraints.Required
   private String password;
 
+  @Constraints.Required
+  private String biography;
+
   public void setFirstName(String firstName){
     this.firstName = firstName;
   }
@@ -38,6 +41,10 @@ public class ProfileData{
     this.age = age;
   }
 
+  public void setBio(String biography){
+    this.biography = biography;
+  }
+
   public int getAge(){
     return age;
   }
@@ -56,5 +63,9 @@ public class ProfileData{
 
   public String getFirstName(){
     return firstName;
+  }
+
+  public String getBio(){
+    return biography;
   }
 }

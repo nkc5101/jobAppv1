@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/sbt/jobappv1/conf/routes
-// @DATE:Sun Oct 28 15:36:40 EDT 2018
+// @DATE:Sun Oct 28 20:08:57 EDT 2018
 
 import play.api.mvc.Call
 
@@ -19,15 +19,27 @@ package controllers {
 
   
     // @LINE:10
-    def createProfile(): Call = {
+    def viewCreateProfile(): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "profiles")
+      Call("GET", _prefix + { _defaultPrefix } + "profiles/create")
     }
   
     // @LINE:11
+    def createProfile(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "profiles/createUser")
+    }
+  
+    // @LINE:12
     def getProfile(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "profiles/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
+  
+    // @LINE:13
+    def authenticate(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "profiles")
     }
   
     // @LINE:6
@@ -46,14 +58,14 @@ package controllers {
   
   }
 
-  // @LINE:14
+  // @LINE:17
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:14
+    // @LINE:17
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

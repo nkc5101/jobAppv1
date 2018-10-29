@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/sbt/jobappv1/conf/routes
-// @DATE:Sun Oct 28 15:36:40 EDT 2018
+// @DATE:Sun Oct 28 20:08:57 EDT 2018
 
 package router
 
@@ -16,7 +16,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   ProfileController_1: controllers.ProfileController,
-  // @LINE:14
+  // @LINE:17
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -25,7 +25,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     ProfileController_1: controllers.ProfileController,
-    // @LINE:14
+    // @LINE:17
     Assets_0: controllers.Assets
   ) = this(errorHandler, ProfileController_1, Assets_0, "/")
 
@@ -41,8 +41,10 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.ProfileController.login()"""),
     ("""POST""", this.prefix, """controllers.ProfileController.login()"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles""", """controllers.ProfileController.createProfile()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles/create""", """controllers.ProfileController.viewCreateProfile()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles/createUser""", """controllers.ProfileController.createProfile()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles/""" + "$" + """id<[^/]+>""", """controllers.ProfileController.getProfile(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles""", """controllers.ProfileController.authenticate()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -88,10 +90,28 @@ class Routes(
   )
 
   // @LINE:10
-  private[this] lazy val controllers_ProfileController_createProfile2_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("profiles")))
+  private[this] lazy val controllers_ProfileController_viewCreateProfile2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("profiles/create")))
   )
-  private[this] lazy val controllers_ProfileController_createProfile2_invoker = createInvoker(
+  private[this] lazy val controllers_ProfileController_viewCreateProfile2_invoker = createInvoker(
+    ProfileController_1.viewCreateProfile(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ProfileController",
+      "viewCreateProfile",
+      Nil,
+      "GET",
+      this.prefix + """profiles/create""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:11
+  private[this] lazy val controllers_ProfileController_createProfile3_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("profiles/createUser")))
+  )
+  private[this] lazy val controllers_ProfileController_createProfile3_invoker = createInvoker(
     ProfileController_1.createProfile(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -99,17 +119,17 @@ class Routes(
       "createProfile",
       Nil,
       "POST",
-      this.prefix + """profiles""",
+      this.prefix + """profiles/createUser""",
       """""",
       Seq()
     )
   )
 
-  // @LINE:11
-  private[this] lazy val controllers_ProfileController_getProfile3_route = Route("GET",
+  // @LINE:12
+  private[this] lazy val controllers_ProfileController_getProfile4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("profiles/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_ProfileController_getProfile3_invoker = createInvoker(
+  private[this] lazy val controllers_ProfileController_getProfile4_invoker = createInvoker(
     ProfileController_1.getProfile(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -123,11 +143,29 @@ class Routes(
     )
   )
 
-  // @LINE:14
-  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
+  // @LINE:13
+  private[this] lazy val controllers_ProfileController_authenticate5_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("profiles")))
+  )
+  private[this] lazy val controllers_ProfileController_authenticate5_invoker = createInvoker(
+    ProfileController_1.authenticate(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ProfileController",
+      "authenticate",
+      Nil,
+      "POST",
+      this.prefix + """profiles""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:17
+  private[this] lazy val controllers_Assets_versioned6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned6_invoker = createInvoker(
     Assets_0.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -157,21 +195,33 @@ class Routes(
       }
   
     // @LINE:10
-    case controllers_ProfileController_createProfile2_route(params@_) =>
+    case controllers_ProfileController_viewCreateProfile2_route(params@_) =>
       call { 
-        controllers_ProfileController_createProfile2_invoker.call(ProfileController_1.createProfile())
+        controllers_ProfileController_viewCreateProfile2_invoker.call(ProfileController_1.viewCreateProfile())
       }
   
     // @LINE:11
-    case controllers_ProfileController_getProfile3_route(params@_) =>
-      call(params.fromPath[Int]("id", None)) { (id) =>
-        controllers_ProfileController_getProfile3_invoker.call(ProfileController_1.getProfile(id))
+    case controllers_ProfileController_createProfile3_route(params@_) =>
+      call { 
+        controllers_ProfileController_createProfile3_invoker.call(ProfileController_1.createProfile())
       }
   
-    // @LINE:14
-    case controllers_Assets_versioned4_route(params@_) =>
+    // @LINE:12
+    case controllers_ProfileController_getProfile4_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_ProfileController_getProfile4_invoker.call(ProfileController_1.getProfile(id))
+      }
+  
+    // @LINE:13
+    case controllers_ProfileController_authenticate5_route(params@_) =>
+      call { 
+        controllers_ProfileController_authenticate5_invoker.call(ProfileController_1.authenticate())
+      }
+  
+    // @LINE:17
+    case controllers_Assets_versioned6_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned4_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned6_invoker.call(Assets_0.versioned(path, file))
       }
   }
 }
