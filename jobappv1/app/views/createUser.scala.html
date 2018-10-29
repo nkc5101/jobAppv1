@@ -1,7 +1,7 @@
 @(form : Form[ProfileData])
 
 <html>
-@helper.form(routes.ProfileController.authenticate){
+@helper.form(action = helper.CSRF(routes.ProfileController.login)){
   <style>
     #bioForm{
       width: 300px;
@@ -10,13 +10,22 @@
   </style>
   <h1>Create New User</h1>
    <p>
-       <input type="text" name="firstname" placeholder="First Name" value="@form("firstname").value">
+       First Name :<input type="text" name="firstname" placeholder="First Name" value="@form("firstname").value">
    </p>
    <p>
-       <input type="text" name="lastname" placeholder="Last Name" value = "@form("lastname").value">
+       Last Name :<input type="text" name="lastname" placeholder="Last Name" value = "@form("lastname").value">
    </p>
    <p>
-       <input id="bioForm" type="text" name="biography" placeholder="Describe yourself." value = "@form("biography").value">
+       Username :<input type="text" name="username" placeholder="Username" value = "@form("username").value">
+   </p>
+   <p>
+       Password :<input type="password" name="password" placeholder="" value = "@form("password").value">
+   </p>
+   <p>
+       Age :<input type="number" name="age"  value = "@form("age").value">
+   </p>
+   <p>
+       Biography :<input id="bioForm" type="text" name="biography" placeholder="Describe yourself." value = "@form("biography").value">
    </p>
    <p>
      <button type="submit" action="@routes.ProfileController.viewCreateProfile()">Create User</button>

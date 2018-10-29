@@ -1,13 +1,25 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\createUser.scala.html:20:95: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
-[0m[[0m[33mwarn[0m] [0m[0m           <input type="text" name="username" placeholder="Username" value="@form("username").value">[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                                                              ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\createUser.scala.html:23:101: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
-[0m[[0m[33mwarn[0m] [0m[0m           <input type="password" name="password" placeholder="Password" value = "@form("password").value">[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                                                                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\createUser.scala.html:13:107: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m       First Name :<input type="text" name="firstname" placeholder="First Name" value="@form("firstname").value">[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\createUser.scala.html:16:105: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m       Last Name :<input type="text" name="lastname" placeholder="Last Name" value = "@form("lastname").value">[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\createUser.scala.html:19:103: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m       Username :<input type="text" name="username" placeholder="Username" value = "@form("username").value">[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\createUser.scala.html:22:99: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m       Password :<input type="password" name="password" placeholder="" value = "@form("password").value">[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\createUser.scala.html:25:68: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m       Age :<input type="number" name="age"  value = "@form("age").value">[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\createUser.scala.html:28:129: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
+[0m[[0m[33mwarn[0m] [0m[0m       Biography :<input id="bioForm" type="text" name="biography" placeholder="Describe yourself." value = "@form("biography").value">[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                                                ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\login.scala.html:7:91: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
 [0m[[0m[33mwarn[0m] [0m[0m       <input type="text" name="username" placeholder="Username" value="@form("username").value">[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                                                                          ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mC:\sbt\jobappv1\app\views\login.scala.html:10:97: method value in class Field is deprecated: see corresponding Javadoc for more information.[0m
 [0m[[0m[33mwarn[0m] [0m[0m       <input type="password" name="password" placeholder="Password" value = "@form("password").value">[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                                                                                ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0m8 warnings found[0m

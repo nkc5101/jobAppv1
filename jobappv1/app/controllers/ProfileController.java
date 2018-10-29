@@ -16,7 +16,7 @@ import static play.libs.Scala.asScala;
 @Singleton
 public class ProfileController extends Controller{
   private final Form<ProfileData> form;
-  private final List<Profile> profiles;
+  private  List<Profile> profiles;
   private Form<ProfileLogin> loginForm;
 
   @Inject
@@ -27,12 +27,14 @@ public class ProfileController extends Controller{
   }
 
   public Result login(){
+    session().clear();
     return ok(views.html.login.render(loginForm));
   }
 
   public Result viewCreateProfile(){
     return ok(views.html.createUser.render(form));
   }
+
 
   public Result createProfile(){
     final Form<ProfileData> boundForm = form.bindFromRequest();
@@ -48,9 +50,9 @@ public class ProfileController extends Controller{
   }
 
   public Result home(){
+    session().clear();
     return ok(views.html.login.render(loginForm));
   }
-
   public Result getProfile(int id){
     Profile returnedProfile = profiles.get(id);
     if(returnedProfile == null){
@@ -71,10 +73,11 @@ public class ProfileController extends Controller{
       String password = data.getPassword();
       for(int i = 0; i < profiles.size(); i++){
         if(profiles.get(i).authenticate(username, password)){
-          return ok(views.html.profile.render(profiles.get(i)));
+          return redirect(routes.ProfileController.getProfile(i));
         }
       }
       return notFound(views.html.login.render(loginForm));
     }
   }
+
 }
