@@ -1,0 +1,33 @@
+@(form: Form[ProfileData])
+
+<html>
+  <head>
+    <HTA:application
+      APPLICATIONNAME="Job Search"
+      SYSMENU="yes">
+    <title>Job Search</title>
+    <style type="text/css">
+      body {background-color:lightsteelblue;}
+      p {font:bold 18px arial;}
+    </style>
+
+  </head>
+  <body>
+    <p>Welcome to Job Search!!!<br   /><br   />Group 10 </p>
+    @helper.form(routes.ProfileController.authenticate){
+      <h1>Sign in</h1>
+       <p>
+           <input type="text" name="username" placeholder="Username" value="@form("username").value">
+       </p>
+       <p>
+           <input type="password" name="password" placeholder="Password" value = "@form("password").value">
+       </p>
+       <p>
+           <button type="submit">Login</button>
+       </p>
+       <p>
+         <button type="submit" action="@routes.ProfileController.viewCreateProfile()">Create User</button>
+       </p>
+       </html>
+    }
+    <p style="text-align: left;"><button type="button">Submit</button> <button type="button">Back</button></p>
