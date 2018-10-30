@@ -1,12 +1,7 @@
 @(profileForm : Form[ProfileData])
-@helper.form(routes.ProfileController.createProfile){
-@helper.CSRF.formField
-@helper.inputText(profileForm("firstName"))
-@helper.inputText(profileForm("lastName"))
-@helper.inputText(profileForm("username"))
-@helper.inputText(profileForm("password"))
+@import helper._
+@form(CSRF(routes.ProfileController.createProfile)){
 
-@helper.inputText(profileForm("biography"))
 
 <html>
 
@@ -18,22 +13,22 @@
   </style>
   <h1>Create New User</h1>
    <p>
-       First Name :<input type="text" name="firstname" placeholder="First Name" value="@profileForm("firstname").value">
+       First Name :<input type="text" name="firstname" placeholder="First Name" value="@profileForm("firstname").getValue()">
    </p>
    <p>
-       Last Name :<input type="text" name="lastname" placeholder="Last Name" value = "@profileForm("lastname").value">
+       Last Name :<input type="text" name="lastname" placeholder="Last Name" value = "@profileForm("lastname").getValue()">
    </p>
    <p>
-       Username :<input type="text" name="username" placeholder="Username" value = "@profileForm("username").value">
+       Username :<input type="text" name="username" placeholder="Username" value = "@profileForm("username").getValue()">
    </p>
    <p>
-       Password :<input type="password" name="password" placeholder="" value = "@profileForm("password").value">
+       Password :<input type="password" name="password" placeholder="" value = "@profileForm("password").getValue()">
    </p>
    <p>
-       Age :<input type="number" name="age"  value = "@profileForm("age").value">
+       Age :<input type="text" name="age"  value = "@profileForm("age").getValue()">
    </p>
    <p>
-       Biography :<input id="bioForm" type="text" name="biography" placeholder="Describe yourself." value = "@profileForm("biography").value">
+       Biography :<input id="bioForm" type="text" name="biography" placeholder="Describe yourself." value = "@profileForm("biography").getValue()">
    </p>
    <p>
      <button type="submit" action="@routes.ProfileController.login()">Create User</button>

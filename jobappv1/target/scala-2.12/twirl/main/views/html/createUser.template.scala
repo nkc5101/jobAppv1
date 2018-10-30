@@ -28,50 +28,45 @@ object createUser extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api
   def apply/*1.2*/(profileForm : Form[ProfileData]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
+/*2.2*/import helper._
 
 
 Seq[Any](format.raw/*1.35*/("""
-"""),_display_(/*2.2*/helper/*2.8*/.form(routes.ProfileController.createProfile)/*2.53*/{_display_(Seq[Any](format.raw/*2.54*/("""
-"""),_display_(/*3.2*/helper/*3.8*/.CSRF.formField),format.raw/*3.23*/("""
-"""),_display_(/*4.2*/helper/*4.8*/.inputText(profileForm("firstName"))),format.raw/*4.44*/("""
-"""),_display_(/*5.2*/helper/*5.8*/.inputText(profileForm("lastName"))),format.raw/*5.43*/("""
-"""),_display_(/*6.2*/helper/*6.8*/.inputText(profileForm("username"))),format.raw/*6.43*/("""
-"""),_display_(/*7.2*/helper/*7.8*/.inputText(profileForm("password"))),format.raw/*7.43*/("""
+"""),_display_(/*3.2*/form(CSRF(routes.ProfileController.createProfile))/*3.52*/{_display_(Seq[Any](format.raw/*3.53*/("""
 
-"""),_display_(/*9.2*/helper/*9.8*/.inputText(profileForm("biography"))),format.raw/*9.44*/("""
 
-"""),format.raw/*11.1*/("""<html>
+"""),format.raw/*6.1*/("""<html>
 
   <style>
-    #bioForm"""),format.raw/*14.13*/("""{"""),format.raw/*14.14*/("""
-      """),format.raw/*15.7*/("""width: 300px;
+    #bioForm"""),format.raw/*9.13*/("""{"""),format.raw/*9.14*/("""
+      """),format.raw/*10.7*/("""width: 300px;
       height: 200px;
-    """),format.raw/*17.5*/("""}"""),format.raw/*17.6*/("""
-  """),format.raw/*18.3*/("""</style>
+    """),format.raw/*12.5*/("""}"""),format.raw/*12.6*/("""
+  """),format.raw/*13.3*/("""</style>
   <h1>Create New User</h1>
    <p>
-       First Name :<input type="text" name="firstname" placeholder="First Name" value=""""),_display_(/*21.89*/profileForm("firstname")/*21.113*/.value),format.raw/*21.119*/("""">
+       First Name :<input type="text" name="firstname" placeholder="First Name" value=""""),_display_(/*16.89*/profileForm("firstname")/*16.113*/.getValue()),format.raw/*16.124*/("""">
    </p>
    <p>
-       Last Name :<input type="text" name="lastname" placeholder="Last Name" value = """"),_display_(/*24.88*/profileForm("lastname")/*24.111*/.value),format.raw/*24.117*/("""">
+       Last Name :<input type="text" name="lastname" placeholder="Last Name" value = """"),_display_(/*19.88*/profileForm("lastname")/*19.111*/.getValue()),format.raw/*19.122*/("""">
    </p>
    <p>
-       Username :<input type="text" name="username" placeholder="Username" value = """"),_display_(/*27.86*/profileForm("username")/*27.109*/.value),format.raw/*27.115*/("""">
+       Username :<input type="text" name="username" placeholder="Username" value = """"),_display_(/*22.86*/profileForm("username")/*22.109*/.getValue()),format.raw/*22.120*/("""">
    </p>
    <p>
-       Password :<input type="password" name="password" placeholder="" value = """"),_display_(/*30.82*/profileForm("password")/*30.105*/.value),format.raw/*30.111*/("""">
+       Password :<input type="password" name="password" placeholder="" value = """"),_display_(/*25.82*/profileForm("password")/*25.105*/.getValue()),format.raw/*25.116*/("""">
    </p>
    <p>
-       Age :<input type="number" name="age"  value = """"),_display_(/*33.56*/profileForm("age")/*33.74*/.value),format.raw/*33.80*/("""">
+       Age :<input type="text" name="age"  value = """"),_display_(/*28.54*/profileForm("age")/*28.72*/.getValue()),format.raw/*28.83*/("""">
    </p>
    <p>
-       Biography :<input id="bioForm" type="text" name="biography" placeholder="Describe yourself." value = """"),_display_(/*36.111*/profileForm("biography")/*36.135*/.value),format.raw/*36.141*/("""">
+       Biography :<input id="bioForm" type="text" name="biography" placeholder="Describe yourself." value = """"),_display_(/*31.111*/profileForm("biography")/*31.135*/.getValue()),format.raw/*31.146*/("""">
    </p>
    <p>
-     <button type="submit" action=""""),_display_(/*39.37*/routes/*39.43*/.ProfileController.login()),format.raw/*39.69*/("""">Create User</button>
+     <button type="submit" action=""""),_display_(/*34.37*/routes/*34.43*/.ProfileController.login()),format.raw/*34.69*/("""">Create User</button>
    </p>
    </html>
-""")))}),format.raw/*42.2*/("""
+""")))}),format.raw/*37.2*/("""
 """))
       }
     }
@@ -88,11 +83,11 @@ Seq[Any](format.raw/*1.35*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Oct 30 18:49:28 EDT 2018
+                  DATE: Tue Oct 30 19:15:07 EDT 2018
                   SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/createUser.scala.html
-                  HASH: c71885c23e3c0d05c8a78efd10ffbe06ff0db739
-                  MATRIX: 964->1|1092->34|1120->37|1133->43|1186->88|1224->89|1252->92|1265->98|1300->113|1328->116|1341->122|1397->158|1425->161|1438->167|1493->202|1521->205|1534->211|1589->246|1617->249|1630->255|1685->290|1715->295|1728->301|1784->337|1815->341|1876->374|1905->375|1940->383|2008->424|2036->425|2067->429|2228->563|2262->587|2290->593|2425->701|2458->724|2486->730|2619->836|2652->859|2680->865|2809->967|2842->990|2870->996|2973->1072|3000->1090|3027->1096|3186->1227|3220->1251|3248->1257|3332->1314|3347->1320|3394->1346|3470->1392
-                  LINES: 28->1|33->1|34->2|34->2|34->2|34->2|35->3|35->3|35->3|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|41->9|41->9|41->9|43->11|46->14|46->14|47->15|49->17|49->17|50->18|53->21|53->21|53->21|56->24|56->24|56->24|59->27|59->27|59->27|62->30|62->30|62->30|65->33|65->33|65->33|68->36|68->36|68->36|71->39|71->39|71->39|74->42
+                  HASH: 5dc682c9417d51b48afc7add7eeeb0b528b80ffc
+                  MATRIX: 964->1|1070->37|1115->34|1143->55|1201->105|1239->106|1271->112|1331->145|1359->146|1394->154|1462->195|1490->196|1521->200|1682->334|1716->358|1749->369|1884->477|1917->500|1950->511|2083->617|2116->640|2149->651|2278->753|2311->776|2344->787|2445->861|2472->879|2504->890|2663->1021|2697->1045|2730->1056|2814->1113|2829->1119|2876->1145|2952->1191
+                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|38->6|41->9|41->9|42->10|44->12|44->12|45->13|48->16|48->16|48->16|51->19|51->19|51->19|54->22|54->22|54->22|57->25|57->25|57->25|60->28|60->28|60->28|63->31|63->31|63->31|66->34|66->34|66->34|69->37
                   -- GENERATED --
               */
           

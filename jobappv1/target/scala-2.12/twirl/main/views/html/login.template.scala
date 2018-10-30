@@ -33,27 +33,25 @@ object login extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 Seq[Any](format.raw/*1.34*/("""
 """),_display_(/*3.2*/form(CSRF(routes.ProfileController.authenticate))/*3.51*/{_display_(Seq[Any](format.raw/*3.52*/("""
-  """),_display_(/*4.4*/helper/*4.10*/.CSRF.formField),format.raw/*4.25*/("""
-  """),_display_(/*5.4*/helper/*5.10*/.inputText(loginForm("username"))),format.raw/*5.43*/("""
-  """),_display_(/*6.4*/helper/*6.10*/.inputText(loginForm("password"))),format.raw/*6.43*/("""
 
 
-"""),format.raw/*9.1*/("""<html>
+
+"""),format.raw/*7.1*/("""<html>
 
   <h1>Sign in</h1>
    <p>
-       <input type="text" name="username" placeholder="Username" value=""""),_display_(/*13.74*/loginForm("username")/*13.95*/.value),format.raw/*13.101*/("""">
+       <input type="text" name="username" placeholder="Username" value=""""),_display_(/*11.74*/loginForm("username")/*11.95*/.getValue()),format.raw/*11.106*/("""">
    </p>
    <p>
-       <input type="password" name="password" placeholder="Password" value = """"),_display_(/*16.80*/loginForm("password")/*16.101*/.value),format.raw/*16.107*/("""">
+       <input type="password" name="password" placeholder="Password" value = """"),_display_(/*14.80*/loginForm("password")/*14.101*/.getValue()),format.raw/*14.112*/("""">
    </p>
    <p>
        <button type="submit">Login</button>
    </p>
 
-""")))}),format.raw/*22.2*/("""
-"""),format.raw/*23.1*/("""<p>
-  <a href=""""),_display_(/*24.13*/routes/*24.19*/.ProfileController.viewCreateProfile),format.raw/*24.55*/("""">Create User</a>
+""")))}),format.raw/*20.2*/("""
+"""),format.raw/*21.1*/("""<p>
+  <a href=""""),_display_(/*22.13*/routes/*22.19*/.ProfileController.viewCreateProfile),format.raw/*22.55*/("""">Create User</a>
 </p>
 </html>
 """))
@@ -72,11 +70,11 @@ Seq[Any](format.raw/*1.34*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Oct 30 18:43:06 EDT 2018
+                  DATE: Tue Oct 30 19:08:33 EDT 2018
                   SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/login.scala.html
-                  HASH: e6bf25b8d483b99ac4580b502be79007108374e4
-                  MATRIX: 960->1|1065->36|1110->33|1138->54|1195->103|1233->104|1263->109|1277->115|1312->130|1342->135|1356->141|1409->174|1439->179|1453->185|1506->218|1538->224|1676->335|1706->356|1734->362|1861->462|1892->483|1920->489|2028->567|2057->569|2101->586|2116->592|2173->628
-                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|41->9|45->13|45->13|45->13|48->16|48->16|48->16|54->22|55->23|56->24|56->24|56->24
+                  HASH: 8bb0238853a0b680d9e98e88c3aa39b7631b6026
+                  MATRIX: 960->1|1065->36|1110->33|1138->54|1195->103|1233->104|1267->112|1405->223|1435->244|1468->255|1595->355|1626->376|1659->387|1767->465|1796->467|1840->484|1855->490|1912->526
+                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|39->7|43->11|43->11|43->11|46->14|46->14|46->14|52->20|53->21|54->22|54->22|54->22
                   -- GENERATED --
               */
           

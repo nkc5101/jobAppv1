@@ -1,19 +1,17 @@
 @(loginForm : Form[ProfileLogin])
 @import helper._
 @form(CSRF(routes.ProfileController.authenticate)){
-  @helper.CSRF.formField
-  @helper.inputText(loginForm("username"))
-  @helper.inputText(loginForm("password"))
+
 
 
 <html>
 
   <h1>Sign in</h1>
    <p>
-       <input type="text" name="username" placeholder="Username" value="@loginForm("username").value">
+       <input type="text" name="username" placeholder="Username" value="@loginForm("username").getValue()">
    </p>
    <p>
-       <input type="password" name="password" placeholder="Password" value = "@loginForm("password").value">
+       <input type="password" name="password" placeholder="Password" value = "@loginForm("password").getValue()">
    </p>
    <p>
        <button type="submit">Login</button>

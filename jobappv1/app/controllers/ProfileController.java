@@ -40,7 +40,8 @@ public class ProfileController extends Controller{
     final Form<ProfileData> boundForm = form.bindFromRequest();
 
     if(boundForm.hasErrors()){
-      return badRequest(views.html.profile.render(profiles.get(profiles.size()-1)));
+
+      return badRequest(views.html.createUser.render(form));
     } else {
       ProfileData data = boundForm.get();
       profiles.add(new Profile(data.getFirstName(), data.getLastName(), data.getUsername(), data.getPassword(), data.getAge(), data.getBiography()));
