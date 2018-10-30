@@ -1,7 +1,7 @@
 @(profileForm : Form[ProfileData])
 @import helper._
 @form(CSRF(routes.ProfileController.createProfile)){
-
+@helper.CSRF.formField
 
 <html>
 
@@ -13,22 +13,22 @@
   </style>
   <h1>Create New User</h1>
    <p>
-       First Name :<input type="text" name="firstname" placeholder="First Name" value="@profileForm("firstname").getValue()">
+       First Name : @helper.inputText(field = profileForm("firstName"))
    </p>
    <p>
-       Last Name :<input type="text" name="lastname" placeholder="Last Name" value = "@profileForm("lastname").getValue()">
+       Last Name :@helper.inputText(field = profileForm("lastName"))
    </p>
    <p>
-       Username :<input type="text" name="username" placeholder="Username" value = "@profileForm("username").getValue()">
+       Username :@helper.inputText(field = profileForm("username"))
    </p>
    <p>
-       Password :<input type="password" name="password" placeholder="" value = "@profileForm("password").getValue()">
+       Password :@helper.inputPassword(field = profileForm("password"))
    </p>
    <p>
-       Age :<input type="text" name="age"  value = "@profileForm("age").getValue()">
+       Age :@helper.inputText(field = profileForm("age"))
    </p>
    <p>
-       Biography :<input id="bioForm" type="text" name="biography" placeholder="Describe yourself." value = "@profileForm("biography").getValue()">
+       Biography :@helper.inputText(field = profileForm("biography"))
    </p>
    <p>
      <button type="submit" action="@routes.ProfileController.login()">Create User</button>

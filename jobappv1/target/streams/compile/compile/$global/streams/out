@@ -1,3 +1,31 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\ProfileController.java:44:1:  error: ')' expected[0m
-[0m[[0m[31merror[0m] [0m[0m      return badRequest(views.html.createUser.render(form);[0m
-[0m[[0m[31merror[0m] [0m[0m                                                          ^1 error[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:5:24: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("firstName")[0m
+[0m[[0m[31merror[0m] [0m[0m required: play.api.mvc.Call[0m
+[0m[[0m[31merror[0m] [0m[0m@helper.inputText(form("firstName"))[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:6:24: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("lastName")[0m
+[0m[[0m[31merror[0m] [0m[0m required: play.api.mvc.Call[0m
+[0m[[0m[31merror[0m] [0m[0m@helper.inputText(form("lastName"))[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:7:24: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("username")[0m
+[0m[[0m[31merror[0m] [0m[0m required: play.api.mvc.Call[0m
+[0m[[0m[31merror[0m] [0m[0m@helper.inputText(form("username"))[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:8:28: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("password")[0m
+[0m[[0m[31merror[0m] [0m[0m required: play.api.mvc.Call[0m
+[0m[[0m[31merror[0m] [0m[0m@helper.inputPassword(form("password"))[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:9:24: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("age")[0m
+[0m[[0m[31merror[0m] [0m[0m required: play.api.mvc.Call[0m
+[0m[[0m[31merror[0m] [0m[0m@helper.inputText(form("age"))[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:10:24: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String("biography")[0m
+[0m[[0m[31merror[0m] [0m[0m required: play.api.mvc.Call[0m
+[0m[[0m[31merror[0m] [0m[0m@helper.inputText(form("biography"))[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
