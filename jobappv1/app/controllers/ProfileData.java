@@ -41,7 +41,7 @@ public class ProfileData{
     this.age = age;
   }
 
-  public void setBio(String biography){
+  public void setBiography(String biography){
     this.biography = biography;
   }
 
@@ -65,7 +65,7 @@ public class ProfileData{
     return firstName;
   }
 
-  public String getBio(){
+  public String getBiography(){
     return biography;
   }
 }

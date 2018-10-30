@@ -1,2 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m[Error] C:\sbt\jobappv1\app\views\createUser.scala.html:34[0m
-[0m[[0m[31merror[0m] [0m[0m}: Expected ')' but found 'EOF'[0m
+[0m[[0m[31merror[0m] [0m[0m[Error] C:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:42[0m
+[0m[[0m[31merror[0m] [0m[0m}: Not parsed?[0m

@@ -43,7 +43,7 @@ public class ProfileController extends Controller{
       return badRequest(views.html.profile.render(profiles.get(profiles.size()-1)));
     } else {
       ProfileData data = boundForm.get();
-      profiles.add(new Profile(data.getFirstName(), data.getLastName(), data.getUsername(), data.getPassword(), data.getAge(), data.getBio()));
+      profiles.add(new Profile(data.getFirstName(), data.getLastName(), data.getUsername(), data.getPassword(), data.getAge(), data.getBiography()));
       flash("info", "Profile added!");
       return redirect(routes.ProfileController.login());
     }
