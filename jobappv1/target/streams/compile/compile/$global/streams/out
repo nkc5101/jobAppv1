@@ -1,19 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:16:73: value update is not a member of object Symbol[0m
-[0m[[0m[31merror[0m] [0m[0m       First Name : @helper.inputText(field = profileForm("firstName"), '_label = "First Name :")[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:19:70: value update is not a member of object Symbol[0m
-[0m[[0m[31merror[0m] [0m[0m       Last Name :@helper.inputText(field = profileForm("lastName"), '_label = "Last Name :")[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:22:69: value update is not a member of object Symbol[0m
-[0m[[0m[31merror[0m] [0m[0m       Username :@helper.inputText(field = profileForm("username"), '_label = "Username :")[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:25:73: value update is not a member of object Symbol[0m
-[0m[[0m[31merror[0m] [0m[0m       Password :@helper.inputPassword(field = profileForm("password"), '_label = "Password :")[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:28:59: value update is not a member of object Symbol[0m
-[0m[[0m[31merror[0m] [0m[0m       Age :@helper.inputText(field = profileForm("age"), '_label = "Age :")[0m
-[0m[[0m[31merror[0m] [0m[0m                                                          ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\createUser.scala.html:31:71: value update is not a member of object Symbol[0m
-[0m[[0m[31merror[0m] [0m[0m       Biography :@helper.inputText(field = profileForm("biography"), '_label = "Biography :")[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
-[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\views\main.scala.html:66:20: value JobController is not a member of object controllers.routes[0m
+[0m[[0m[31merror[0m] [0m[0m  <a href="@routes.JobController.showJobs()">Jobs</a>[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

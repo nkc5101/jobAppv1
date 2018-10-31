@@ -14,14 +14,14 @@
     <div id="person-stats">
 
       <h4>Name: </h4>
-      <p>@(profile.firstName + " " + profile.lastName)</p>
+      <p>@(profile.getFirstName() + " " + profile.getLastName())</p>
 
-      <h4>Age: </h4><p>@(profile.age)</p>
-      <h4>Password: </h4><p>@(profile.password)</<p>
+      <h4>Age: </h4><p>@(profile.getAge())</p>
+      <h4>Password: </h4><p>@(profile.getPassword())</<p>
     </div>
     <div id="person-bio">
       <h4>Biography:</h4>
-      <p>@(profile.biography)</p>
+      <p>@(profile.getBiography())</p>
     </div>
   </body>
 <html>

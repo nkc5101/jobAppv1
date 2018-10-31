@@ -46,14 +46,14 @@ Seq[Any](format.raw/*1.20*/("""
     <div id="person-stats">
 
       <h4>Name: </h4>
-      <p>"""),_display_(/*17.11*/(profile.firstName + " " + profile.lastName)),format.raw/*17.55*/("""</p>
+      <p>"""),_display_(/*17.11*/(profile.getFirstName() + " " + profile.getLastName())),format.raw/*17.65*/("""</p>
 
-      <h4>Age: </h4><p>"""),_display_(/*19.25*/(profile.age)),format.raw/*19.38*/("""</p>
-      <h4>Password: </h4><p>"""),_display_(/*20.30*/(profile.password)),format.raw/*20.48*/("""</<p>
+      <h4>Age: </h4><p>"""),_display_(/*19.25*/(profile.getAge())),format.raw/*19.43*/("""</p>
+      <h4>Password: </h4><p>"""),_display_(/*20.30*/(profile.getPassword())),format.raw/*20.53*/("""</<p>
     </div>
     <div id="person-bio">
       <h4>Biography:</h4>
-      <p>"""),_display_(/*24.11*/(profile.biography)),format.raw/*24.30*/("""</p>
+      <p>"""),_display_(/*24.11*/(profile.getBiography())),format.raw/*24.35*/("""</p>
     </div>
   </body>
 <html>
@@ -73,10 +73,10 @@ Seq[Any](format.raw/*1.20*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Oct 30 18:31:08 EDT 2018
-                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/profile.scala.html
-                  HASH: bb9deed278aa279d8385a0c7459fdb234bd7ec4b
-                  MATRIX: 951->1|1064->19|1098->27|1219->121|1247->122|1315->163|1343->164|1378->172|1418->184|1447->185|1512->222|1541->223|1574->229|1696->324|1761->368|1820->400|1854->413|1916->448|1955->466|2065->549|2105->568
+                  DATE: Wed Oct 31 13:07:42 EDT 2018
+                  SOURCE: C:/sbt/jobappv1/app/views/profile.scala.html
+                  HASH: 4b086abe5ac66fdee4120b9433294ddb5161e291
+                  MATRIX: 951->1|1064->19|1098->27|1219->121|1247->122|1315->163|1343->164|1378->172|1418->184|1447->185|1512->222|1541->223|1574->229|1696->324|1771->378|1830->410|1869->428|1931->463|1975->486|2085->569|2130->593
                   LINES: 28->1|33->1|37->5|41->9|41->9|41->9|41->9|42->10|42->10|42->10|42->10|42->10|43->11|49->17|49->17|51->19|51->19|52->20|52->20|56->24|56->24
                   -- GENERATED --
               */

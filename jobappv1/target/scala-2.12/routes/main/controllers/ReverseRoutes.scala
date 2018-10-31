@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
-// @DATE:Tue Oct 30 18:31:07 EDT 2018
+// @SOURCE:C:/sbt/jobappv1/conf/routes
+// @DATE:Wed Oct 31 13:07:42 EDT 2018
 
 import play.api.mvc.Call
 
@@ -58,14 +58,29 @@ package controllers {
   
   }
 
-  // @LINE:17
+  // @LINE:14
+  class ReverseMainController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:14
+    def main(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "main")
+    }
+  
+  }
+
+  // @LINE:18
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:17
+    // @LINE:18
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

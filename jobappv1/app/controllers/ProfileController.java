@@ -18,6 +18,7 @@ public class ProfileController extends Controller{
   private final Form<ProfileData> form;
   private  List<Profile> profiles;
   private Form<ProfileLogin> loginForm;
+  private static int loggedInUser = -1;
 
   @Inject
   public ProfileController(FormFactory formFactory){
@@ -56,10 +57,10 @@ public class ProfileController extends Controller{
   }
   public Result getProfile(int id){
     Profile returnedProfile = profiles.get(id);
-    if(returnedProfile == null){
-      return notFound(views.html.login.render(loginForm));
-    } else {
+    if(returnedProfile == profiles.get(loggedInUser)){
       return ok(views.html.profile.render(returnedProfile));
+    } else {
+      return notFound(views.html.login.render(loginForm));
     }
   }
 
@@ -74,11 +75,16 @@ public class ProfileController extends Controller{
       String password = data.getPassword();
       for(int i = 0; i < profiles.size(); i++){
         if(profiles.get(i).authenticate(username, password)){
-          return redirect(routes.ProfileController.getProfile(i));
+          loggedInUser = i;
+          return redirect(routes.MainController.main());
         }
       }
       return notFound(views.html.login.render(loginForm));
     }
+  }
+
+  public static int getLoggedInUser(){
+    return loggedInUser;
   }
 
 }

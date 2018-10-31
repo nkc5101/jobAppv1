@@ -1,0 +1,19 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging C:\sbt\jobappv1\target\scala-2.12\jobappv1_2.12-1.0-SNAPSHOT-web-assets.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/images[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\public\images[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/images\favicon.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\public\images\favicon.png[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/javascripts[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\public\javascripts[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/javascripts\main.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\public\javascripts\main.js[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/stylesheets[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\public\stylesheets[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/.DS_Store[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\public\.DS_Store[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/stylesheets\.DS_Store[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\public\stylesheets\.DS_Store[0m
+[0m[[0m[0mdebug[0m] [0m[0m	public/stylesheets\main.css[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\public\stylesheets\main.css[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

@@ -1,0 +1,17 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging C:\sbt\jobappv1\target\scala-2.12\jobappv1_2.12-1.0-SNAPSHOT-sources.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models\Profile.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\app\models\Profile.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers\ProfileLogin.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\app\controllers\ProfileLogin.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers\ProfileData.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\app\controllers\ProfileData.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers\ProfileController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\app\controllers\ProfileController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\conf\logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	application.conf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\conf\application.conf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	routes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\sbt\jobappv1\conf\routes[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

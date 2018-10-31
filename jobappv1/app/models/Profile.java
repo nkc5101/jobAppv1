@@ -2,12 +2,12 @@ package models;
 
 public class Profile{
 
-  public String firstName;
-  public String lastName;
-  public String username;
-  public String password;
-  public int age;
-  public String biography;
+  private String firstName;
+  private String lastName;
+  private String username;
+  private String password;
+  private int age;
+  private String biography;
 
   public Profile(String firstName, String lastName, String username, String password, int age, String biography){
     this.firstName = firstName;
@@ -24,6 +24,30 @@ public class Profile{
     } else{
       return false;
     }
+  }
+
+  public String getFirstName(){
+    return firstName;
+  }
+
+  public String getLastName(){
+    return lastName;
+  }
+
+  public String getUsername(){
+    return username;
+  }
+
+  public String getPassword(){
+    return password;
+  }
+
+  public int getAge(){
+    return age;
+  }
+
+  public String getBiography(){
+    return biography;
   }
 
 }
