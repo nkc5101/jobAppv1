@@ -40,11 +40,11 @@ Seq[Any](format.raw/*1.34*/("""
 
   <h1>Sign in</h1>
    <p>
-       <input type="text" name="username" placeholder="Username" value=""""),_display_(/*11.74*/loginForm("username")/*11.95*/.getValue()),format.raw/*11.106*/("""">
-   </p>
+       """),_display_(/*11.9*/helper/*11.15*/.inputText(loginForm("username"), '_label -> "Username :")),format.raw/*11.73*/("""
+   """),format.raw/*12.4*/("""</p>
    <p>
-       <input type="password" name="password" placeholder="Password" value = """"),_display_(/*14.80*/loginForm("password")/*14.101*/.getValue()),format.raw/*14.112*/("""">
-   </p>
+       """),_display_(/*14.9*/helper/*14.15*/.inputPassword(loginForm("password"), '_label -> "Password :")),format.raw/*14.77*/("""
+   """),format.raw/*15.4*/("""</p>
    <p>
        <button type="submit">Login</button>
    </p>
@@ -70,11 +70,11 @@ Seq[Any](format.raw/*1.34*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Oct 30 19:08:33 EDT 2018
+                  DATE: Tue Oct 30 20:00:02 EDT 2018
                   SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/login.scala.html
-                  HASH: 8bb0238853a0b680d9e98e88c3aa39b7631b6026
-                  MATRIX: 960->1|1065->36|1110->33|1138->54|1195->103|1233->104|1267->112|1405->223|1435->244|1468->255|1595->355|1626->376|1659->387|1767->465|1796->467|1840->484|1855->490|1912->526
-                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|39->7|43->11|43->11|43->11|46->14|46->14|46->14|52->20|53->21|54->22|54->22|54->22
+                  HASH: 666b53c9ad61fc5b6acb0fbfcb95962a7b6e99b0
+                  MATRIX: 960->1|1065->36|1110->33|1138->54|1195->103|1233->104|1267->112|1339->158|1354->164|1433->222|1465->227|1513->249|1528->255|1611->317|1643->322|1744->393|1773->395|1817->412|1832->418|1889->454
+                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|39->7|43->11|43->11|43->11|44->12|46->14|46->14|46->14|47->15|52->20|53->21|54->22|54->22|54->22
                   -- GENERATED --
               */
           

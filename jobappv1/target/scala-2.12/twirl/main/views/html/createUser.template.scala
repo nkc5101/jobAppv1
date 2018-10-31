@@ -45,22 +45,22 @@ Seq[Any](format.raw/*1.35*/("""
   """),format.raw/*13.3*/("""</style>
   <h1>Create New User</h1>
    <p>
-       First Name : """),_display_(/*16.22*/helper/*16.28*/.inputText(field = profileForm("firstName"))),format.raw/*16.72*/("""
+       """),_display_(/*16.9*/helper/*16.15*/.inputText(profileForm("firstName"), '_label -> "First Name :")),format.raw/*16.78*/("""
    """),format.raw/*17.4*/("""</p>
    <p>
-       Last Name :"""),_display_(/*19.20*/helper/*19.26*/.inputText(field = profileForm("lastName"))),format.raw/*19.69*/("""
+       """),_display_(/*19.9*/helper/*19.15*/.inputText(profileForm("lastName"), '_label -> "Last Name :")),format.raw/*19.76*/("""
    """),format.raw/*20.4*/("""</p>
    <p>
-       Username :"""),_display_(/*22.19*/helper/*22.25*/.inputText(field = profileForm("username"))),format.raw/*22.68*/("""
+       """),_display_(/*22.9*/helper/*22.15*/.inputText(profileForm("username"), '_label -> "Username :")),format.raw/*22.75*/("""
    """),format.raw/*23.4*/("""</p>
    <p>
-       Password :"""),_display_(/*25.19*/helper/*25.25*/.inputPassword(field = profileForm("password"))),format.raw/*25.72*/("""
+       """),_display_(/*25.9*/helper/*25.15*/.inputPassword(profileForm("password"), '_label -> "Password :")),format.raw/*25.79*/("""
    """),format.raw/*26.4*/("""</p>
    <p>
-       Age :"""),_display_(/*28.14*/helper/*28.20*/.inputText(field = profileForm("age"))),format.raw/*28.58*/("""
+       """),_display_(/*28.9*/helper/*28.15*/.inputText(profileForm("age"), '_label -> "Age :")),format.raw/*28.65*/("""
    """),format.raw/*29.4*/("""</p>
    <p>
-       Biography :"""),_display_(/*31.20*/helper/*31.26*/.inputText(field = profileForm("biography"))),format.raw/*31.70*/("""
+       """),_display_(/*31.9*/helper/*31.15*/.textarea(profileForm("biography"), '_label -> "Biography :")),format.raw/*31.76*/("""
    """),format.raw/*32.4*/("""</p>
    <p>
      <button type="submit" action=""""),_display_(/*34.37*/routes/*34.43*/.ProfileController.login()),format.raw/*34.69*/("""">Create User</button>
@@ -83,10 +83,10 @@ Seq[Any](format.raw/*1.35*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Oct 30 19:42:18 EDT 2018
+                  DATE: Tue Oct 30 19:58:56 EDT 2018
                   SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/createUser.scala.html
-                  HASH: ebe949aac0ba351f67aa68c10733d6c4a275d68e
-                  MATRIX: 964->1|1070->37|1115->34|1143->55|1201->105|1239->106|1267->109|1280->115|1315->130|1345->134|1405->167|1433->168|1468->176|1536->217|1564->218|1595->222|1689->289|1704->295|1769->339|1801->344|1861->377|1876->383|1940->426|1972->431|2031->463|2046->469|2110->512|2142->517|2201->549|2216->555|2284->602|2316->607|2370->634|2385->640|2444->678|2476->683|2536->716|2551->722|2616->766|2648->771|2725->821|2740->827|2787->853|2863->899
+                  HASH: c3d5da52ff07417a1d955966080b04049e4cb0d9
+                  MATRIX: 964->1|1070->37|1115->34|1143->55|1201->105|1239->106|1267->109|1280->115|1315->130|1345->134|1405->167|1433->168|1468->176|1536->217|1564->218|1595->222|1675->276|1690->282|1774->345|1806->350|1854->372|1869->378|1951->439|1983->444|2031->466|2046->472|2127->532|2159->537|2207->559|2222->565|2307->629|2339->634|2387->656|2402->662|2473->712|2505->717|2553->739|2568->745|2650->806|2682->811|2759->861|2774->867|2821->893|2897->939
                   LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|36->4|36->4|38->6|41->9|41->9|42->10|44->12|44->12|45->13|48->16|48->16|48->16|49->17|51->19|51->19|51->19|52->20|54->22|54->22|54->22|55->23|57->25|57->25|57->25|58->26|60->28|60->28|60->28|61->29|63->31|63->31|63->31|64->32|66->34|66->34|66->34|69->37
                   -- GENERATED --
               */

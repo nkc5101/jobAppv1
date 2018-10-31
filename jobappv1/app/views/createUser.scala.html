@@ -13,22 +13,22 @@
   </style>
   <h1>Create New User</h1>
    <p>
-       First Name : @helper.inputText(field = profileForm("firstName"))
+       @helper.inputText(profileForm("firstName"), '_label -> "First Name :")
    </p>
    <p>
-       Last Name :@helper.inputText(field = profileForm("lastName"))
+       @helper.inputText(profileForm("lastName"), '_label -> "Last Name :")
    </p>
    <p>
-       Username :@helper.inputText(field = profileForm("username"))
+       @helper.inputText(profileForm("username"), '_label -> "Username :")
    </p>
    <p>
-       Password :@helper.inputPassword(field = profileForm("password"))
+       @helper.inputPassword(profileForm("password"), '_label -> "Password :")
    </p>
    <p>
-       Age :@helper.inputText(field = profileForm("age"))
+       @helper.inputText(profileForm("age"), '_label -> "Age :")
    </p>
    <p>
-       Biography :@helper.inputText(field = profileForm("biography"))
+       @helper.textarea(profileForm("biography"), '_label -> "Biography :")
    </p>
    <p>
      <button type="submit" action="@routes.ProfileController.login()">Create User</button>
