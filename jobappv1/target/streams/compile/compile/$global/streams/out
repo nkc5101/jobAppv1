@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\views\main.scala.html:66:20: value JobController is not a member of object controllers.routes[0m
-[0m[[0m[31merror[0m] [0m[0m  <a href="@routes.JobController.showJobs()">Jobs</a>[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java:13:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  private final Form<JobData> form;[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^  symbol:   class JobData[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class JobController[0m

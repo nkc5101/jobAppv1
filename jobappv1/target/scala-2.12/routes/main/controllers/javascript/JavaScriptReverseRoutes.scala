@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/sbt/jobappv1/conf/routes
-// @DATE:Wed Oct 31 13:07:42 EDT 2018
+// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
+// @DATE:Thu Nov 01 17:06:55 EDT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -95,7 +95,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:18
+  // @LINE:19
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -103,12 +103,32 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
+    // @LINE:19
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
         function(file1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:15
+  class ReverseJobController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:15
+    def listJobs: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.listJobs",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs"})
         }
       """
     )

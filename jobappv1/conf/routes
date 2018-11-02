@@ -7,11 +7,12 @@ GET     /                           controllers.ProfileController.login()
 
 #Profiles
 POST   /                           controllers.ProfileController.login()
-GET    /profiles/create             controllers.ProfileController.viewCreateProfile()
-POST   /profiles/createUser          controllers.ProfileController.createProfile()
-GET    /profiles/:id                controllers.ProfileController.getProfile(id:Int)
+GET    /profiles/create            controllers.ProfileController.viewCreateProfile()
+POST   /profiles/createUser        controllers.ProfileController.createProfile()
+GET    /profiles/:id               controllers.ProfileController.getProfile(id:Int)
 POST   /profiles                   controllers.ProfileController.authenticate()
-GET    /main                     controllers.MainController.main()
+GET    /main                       controllers.MainController.main()
+GET    /jobs                       controllers.JobController.listJobs()
 
 
 # Map static resources from the /public folder to the /assets URL path
