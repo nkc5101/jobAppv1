@@ -46,8 +46,8 @@ Seq[Any]()
 
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 01 17:06:56 EDT 2018
-                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/job.scala.html
+                  DATE: Fri Nov 02 18:41:05 EDT 2018
+                  SOURCE: C:/sbt/jobappv1/app/views/job.scala.html
                   HASH: 282da6d6fc3be5f18bafd4f3e6904d0c508db341
                   MATRIX: 
                   LINES: 

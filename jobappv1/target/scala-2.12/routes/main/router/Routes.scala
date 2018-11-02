@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
-// @DATE:Thu Nov 01 17:06:55 EDT 2018
+// @SOURCE:C:/sbt/jobappv1/conf/routes
+// @DATE:Fri Nov 02 18:45:43 EDT 2018
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   MainController_0: controllers.MainController,
   // @LINE:15
   JobController_2: controllers.JobController,
-  // @LINE:19
+  // @LINE:20
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     MainController_0: controllers.MainController,
     // @LINE:15
     JobController_2: controllers.JobController,
-    // @LINE:19
+    // @LINE:20
     Assets_1: controllers.Assets
   ) = this(errorHandler, ProfileController_3, MainController_0, JobController_2, Assets_1, "/")
 
@@ -55,6 +55,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles""", """controllers.ProfileController.authenticate()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """main""", """controllers.MainController.main()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """jobs""", """controllers.JobController.listJobs()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """jobs/create""", """controllers.JobController.createJob()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -207,11 +208,29 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_Assets_versioned8_route = Route("GET",
+  // @LINE:16
+  private[this] lazy val controllers_JobController_createJob8_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("jobs/create")))
+  )
+  private[this] lazy val controllers_JobController_createJob8_invoker = createInvoker(
+    JobController_2.createJob(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.JobController",
+      "createJob",
+      Nil,
+      "POST",
+      this.prefix + """jobs/create""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:20
+  private[this] lazy val controllers_Assets_versioned9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned8_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned9_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -276,10 +295,16 @@ class Routes(
         controllers_JobController_listJobs7_invoker.call(JobController_2.listJobs())
       }
   
-    // @LINE:19
-    case controllers_Assets_versioned8_route(params@_) =>
+    // @LINE:16
+    case controllers_JobController_createJob8_route(params@_) =>
+      call { 
+        controllers_JobController_createJob8_invoker.call(JobController_2.createJob())
+      }
+  
+    // @LINE:20
+    case controllers_Assets_versioned9_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned8_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned9_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

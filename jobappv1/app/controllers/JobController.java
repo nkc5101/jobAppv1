@@ -22,7 +22,24 @@ public class JobController extends Controller{
 
   public Result listJobs(){
     if(controllers.ProfileController.getLoggedInUser() >= 0){
-      return ok(views.html.jobList.render());
+      return ok(views.html.jobList.render(asScala(jobs), form));
+    } else {
+      return redirect(routes.ProfileController.login());
+    }
+  }
+
+  public Result createJob(){
+    final Form<JobData> boundForm = form.bindFromRequest();
+
+    if(controllers.ProfileController.getLoggedInUser() >= 0){
+      if(boundForm.hasErrors()){
+        return badRequest(views.html.jobList.render(asScala(jobs), form));
+      } else {
+        JobData data = boundForm.get();
+        jobs.add(new Job(data.getTitle(), data.getDescription(), data.getSalary()));
+        flash("info", "Job added!");
+        return redirect(routes.JobController.listJobs());
+      }
     } else {
       return redirect(routes.ProfileController.login());
     }

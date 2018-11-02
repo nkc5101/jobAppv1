@@ -13,6 +13,7 @@ GET    /profiles/:id               controllers.ProfileController.getProfile(id:I
 POST   /profiles                   controllers.ProfileController.authenticate()
 GET    /main                       controllers.MainController.main()
 GET    /jobs                       controllers.JobController.listJobs()
+POST   /jobs/create                controllers.JobController.createJob()
 
 
 # Map static resources from the /public folder to the /assets URL path
