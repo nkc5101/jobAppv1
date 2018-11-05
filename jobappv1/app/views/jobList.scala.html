@@ -8,12 +8,14 @@
 
     <table>
         <thead>
-            <tr><th>Title</th><th>Description</th><th>Salary</th>
+            <tr><th>Title</th><th>Description</th><th>Salary</th><th>Delete Job</th>
         </thead>
         <tbody>
-        @for(j <- jobs) {
-            <tr><td>@j.getTitle()</td><td>@j.getDescription</td><td>@j.getSalary()</td></tr>
+        @for((j, i) <- jobs.zipWithIndex) {
+          <tr><td>@j.getTitle()</td><td>@j.getDescription</td><td>@j.getSalary()</td><td><button type="submit" onclick="sendPostRequest('@routes.JobController.deleteJob(i)')">Remove</button></td></tr>
         }
+
+
         </tbody>
     </table>
 

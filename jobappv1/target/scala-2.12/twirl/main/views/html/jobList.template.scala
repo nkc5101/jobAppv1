@@ -40,39 +40,41 @@ Seq[Any](format.raw/*1.39*/("""{"""),format.raw/*1.40*/("""
 
     <table>
         <thead>
-            <tr><th>Title</th><th>Description</th><th>Salary</th>
+            <tr><th>Title</th><th>Description</th><th>Salary</th><th>Delete Job</th>
         </thead>
         <tbody>
-        """),_display_(/*14.10*/for(j <- jobs) yield /*14.24*/ {_display_(Seq[Any](format.raw/*14.26*/("""
-            """),format.raw/*15.13*/("""<tr><td>"""),_display_(/*15.22*/j/*15.23*/.getTitle()),format.raw/*15.34*/("""</td><td>"""),_display_(/*15.44*/j/*15.45*/.getDescription),format.raw/*15.60*/("""</td><td>"""),_display_(/*15.70*/j/*15.71*/.getSalary()),format.raw/*15.83*/("""</td></tr>
+        """),_display_(/*14.10*/for((j, i) <- jobs.zipWithIndex) yield /*14.42*/ {_display_(Seq[Any](format.raw/*14.44*/("""
+          """),format.raw/*15.11*/("""<tr><td>"""),_display_(/*15.20*/j/*15.21*/.getTitle()),format.raw/*15.32*/("""</td><td>"""),_display_(/*15.42*/j/*15.43*/.getDescription),format.raw/*15.58*/("""</td><td>"""),_display_(/*15.68*/j/*15.69*/.getSalary()),format.raw/*15.81*/("""</td><td><button type="submit" onclick="sendPostRequest('"""),_display_(/*15.139*/routes/*15.145*/.JobController.deleteJob(i)),format.raw/*15.172*/("""')">Remove</button></td></tr>
         """)))}),format.raw/*16.10*/("""
-        """),format.raw/*17.9*/("""</tbody>
+
+
+        """),format.raw/*19.9*/("""</tbody>
     </table>
 
     <hr/>
 
-    """),format.raw/*22.66*/("""
-    """),_display_(/*23.6*/if(form.hasGlobalErrors)/*23.30*/ {_display_(Seq[Any](format.raw/*23.32*/("""
-        """),_display_(/*24.10*/form/*24.14*/.globalErrors.asScala.map/*24.39*/ { error: play.data.validation.ValidationError =>_display_(Seq[Any](format.raw/*24.88*/("""
-            """),format.raw/*25.13*/("""<div>
-                """),_display_(/*26.18*/error/*26.23*/.key),format.raw/*26.27*/(""": """),_display_(/*26.30*/error/*26.35*/.message),format.raw/*26.43*/("""
-            """),format.raw/*27.13*/("""</div>
-        """)))}),format.raw/*28.10*/("""
-    """)))}),format.raw/*29.6*/("""
+    """),format.raw/*24.66*/("""
+    """),_display_(/*25.6*/if(form.hasGlobalErrors)/*25.30*/ {_display_(Seq[Any](format.raw/*25.32*/("""
+        """),_display_(/*26.10*/form/*26.14*/.globalErrors.asScala.map/*26.39*/ { error: play.data.validation.ValidationError =>_display_(Seq[Any](format.raw/*26.88*/("""
+            """),format.raw/*27.13*/("""<div>
+                """),_display_(/*28.18*/error/*28.23*/.key),format.raw/*28.27*/(""": """),_display_(/*28.30*/error/*28.35*/.message),format.raw/*28.43*/("""
+            """),format.raw/*29.13*/("""</div>
+        """)))}),format.raw/*30.10*/("""
+    """)))}),format.raw/*31.6*/("""
 
-    """),_display_(/*31.6*/helper/*31.12*/.form(routes.JobController.createJob())/*31.51*/ {_display_(Seq[Any](format.raw/*31.53*/("""
-        """),_display_(/*32.10*/helper/*32.16*/.CSRF.formField),format.raw/*32.31*/("""
+    """),_display_(/*33.6*/helper/*33.12*/.form(routes.JobController.createJob())/*33.51*/ {_display_(Seq[Any](format.raw/*33.53*/("""
+        """),_display_(/*34.10*/helper/*34.16*/.CSRF.formField),format.raw/*34.31*/("""
 
-        """),_display_(/*34.10*/helper/*34.16*/.inputText(form("title"))),format.raw/*34.41*/("""
+        """),_display_(/*36.10*/helper/*36.16*/.inputText(form("title"))),format.raw/*36.41*/("""
 
-        """),_display_(/*36.10*/helper/*36.16*/.textarea(form("description"))),format.raw/*36.46*/("""
+        """),_display_(/*38.10*/helper/*38.16*/.textarea(form("description"))),format.raw/*38.46*/("""
 
-        """),_display_(/*38.10*/helper/*38.16*/.inputText(form("salary"))),format.raw/*38.42*/("""
+        """),_display_(/*40.10*/helper/*40.16*/.inputText(form("salary"))),format.raw/*40.42*/("""
 
-        """),format.raw/*40.9*/("""<button type="submit">Create Job</button>
-    """)))}),format.raw/*41.6*/("""
+        """),format.raw/*42.9*/("""<button type="submit">Create Job</button>
+    """)))}),format.raw/*43.6*/("""
 
-"""),format.raw/*43.1*/("""}"""),format.raw/*43.2*/("""
+"""),format.raw/*45.1*/("""}"""),format.raw/*45.2*/("""
 """))
       }
     }
@@ -89,11 +91,11 @@ Seq[Any](format.raw/*1.39*/("""{"""),format.raw/*1.40*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Nov 02 18:45:31 EDT 2018
+                  DATE: Mon Nov 05 12:29:20 EST 2018
                   SOURCE: C:/sbt/jobappv1/app/views/jobList.scala.html
-                  HASH: 0df56871be77c2fd755093e126260731783e0a48
-                  MATRIX: 966->1|1098->38|1126->39|1160->47|1353->213|1383->227|1423->229|1465->243|1501->252|1511->253|1543->264|1580->274|1590->275|1626->290|1663->300|1673->301|1706->313|1758->334|1795->344|1866->448|1899->455|1932->479|1972->481|2010->492|2023->496|2057->521|2144->570|2186->584|2237->608|2251->613|2276->617|2306->620|2320->625|2349->633|2391->647|2439->664|2476->671|2511->680|2526->686|2574->725|2614->727|2652->738|2667->744|2703->759|2743->772|2758->778|2804->803|2844->816|2859->822|2910->852|2950->865|2965->871|3012->897|3051->909|3129->957|3160->961|3188->962
-                  LINES: 28->1|33->1|33->1|35->3|46->14|46->14|46->14|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|48->16|49->17|54->22|55->23|55->23|55->23|56->24|56->24|56->24|56->24|57->25|58->26|58->26|58->26|58->26|58->26|58->26|59->27|60->28|61->29|63->31|63->31|63->31|63->31|64->32|64->32|64->32|66->34|66->34|66->34|68->36|68->36|68->36|70->38|70->38|70->38|72->40|73->41|75->43|75->43
+                  HASH: e2bee6dba0b34071d3465a2655a2bdc3f7247594
+                  MATRIX: 966->1|1098->38|1126->39|1160->47|1372->232|1420->264|1460->266|1500->278|1536->287|1546->288|1578->299|1615->309|1625->310|1661->325|1698->335|1708->336|1741->348|1827->406|1843->412|1892->439|1963->479|2004->493|2075->597|2108->604|2141->628|2181->630|2219->641|2232->645|2266->670|2353->719|2395->733|2446->757|2460->762|2485->766|2515->769|2529->774|2558->782|2600->796|2648->813|2685->820|2720->829|2735->835|2783->874|2823->876|2861->887|2876->893|2912->908|2952->921|2967->927|3013->952|3053->965|3068->971|3119->1001|3159->1014|3174->1020|3221->1046|3260->1058|3338->1106|3369->1110|3397->1111
+                  LINES: 28->1|33->1|33->1|35->3|46->14|46->14|46->14|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|48->16|51->19|56->24|57->25|57->25|57->25|58->26|58->26|58->26|58->26|59->27|60->28|60->28|60->28|60->28|60->28|60->28|61->29|62->30|63->31|65->33|65->33|65->33|65->33|66->34|66->34|66->34|68->36|68->36|68->36|70->38|70->38|70->38|72->40|72->40|72->40|74->42|75->43|77->45|77->45
                   -- GENERATED --
               */
           

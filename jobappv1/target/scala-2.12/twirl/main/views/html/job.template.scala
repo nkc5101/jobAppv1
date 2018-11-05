@@ -30,7 +30,10 @@ object job extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFo
       {
 
 
-Seq[Any]()
+Seq[Any](format.raw/*1.1*/("""<html>
+<h1>THis works</h1>
+</html>
+"""))
       }
     }
   }
@@ -46,11 +49,11 @@ Seq[Any]()
 
               /*
                   -- GENERATED --
-                  DATE: Fri Nov 02 18:41:05 EDT 2018
+                  DATE: Sun Nov 04 19:31:30 EST 2018
                   SOURCE: C:/sbt/jobappv1/app/views/job.scala.html
-                  HASH: 282da6d6fc3be5f18bafd4f3e6904d0c508db341
-                  MATRIX: 
-                  LINES: 
+                  HASH: 345c7757dee170d4f9d5984ddaa46c701166602f
+                  MATRIX: 1028->0
+                  LINES: 33->1
                   -- GENERATED --
               */
           

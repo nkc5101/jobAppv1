@@ -44,4 +44,22 @@ public class JobController extends Controller{
       return redirect(routes.ProfileController.login());
     }
   }
+
+  public Result deleteJob(int id){
+    if(controllers.ProfileController.getLoggedInUser() >= 0){
+      if(id > jobs.size()){
+        jobs.remove(id);
+        return ok(views.html.jobList.render(asScala(jobs), form));
+      } else {
+        return badRequest(views.html.jobList.render(asScala(jobs), form));
+      }
+    } else {
+      return redirect(routes.ProfileController.login());
+    }
+
+  }
+
+  public Result getJob(int id){
+    return ok(views.html.job.render());
+  }
 }
