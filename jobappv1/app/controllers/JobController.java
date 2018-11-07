@@ -60,6 +60,6 @@ public class JobController extends Controller{
   }
 
   public Result getJob(int id){
-    return ok(views.html.job.render());
+    return ok(views.html.job.render(jobs.get(id), form));
   }
 }

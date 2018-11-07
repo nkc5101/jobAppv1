@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/sbt/jobappv1/conf/routes
-// @DATE:Mon Nov 05 12:26:45 EST 2018
+// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
+// @DATE:Tue Nov 06 18:43:23 EST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -122,6 +122,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:18
+    def getJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.getJob",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
   
     // @LINE:15
     def listJobs: JavaScriptReverseRoute = JavaScriptReverseRoute(

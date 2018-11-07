@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/sbt/jobappv1/conf/routes
-// @DATE:Mon Nov 05 12:26:45 EST 2018
+// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
+// @DATE:Tue Nov 06 18:43:23 EST 2018
 
 import play.api.mvc.Call
 
@@ -94,6 +94,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:18
+    def getJob(id:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "jobs/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
   
     // @LINE:15
     def listJobs(): Call = {

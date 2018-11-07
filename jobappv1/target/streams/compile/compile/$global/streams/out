@@ -1,3 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\controllers\JobController.java:59:1:  error: missing return statement[0m
-[0m[[0m[31merror[0m] [0m[0m  }[0m
-[0m[[0m[31merror[0m] [0m[0m  ^1 error[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java:63:1:  error: method render in class job cannot be applied to given types;[0m
+[0m[[0m[31merror[0m] [0m[0m    return ok(views.html.job.render(jobs.get(id)));[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^  required: Job,Form<JobData>[0m
+[0m[[0m[31merror[0m] [0m[0m  found: Job[0m
+[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
+[0m[[0m[31merror[0m] [0m[0m1 error[0m

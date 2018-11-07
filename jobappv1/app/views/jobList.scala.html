@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         @for((j, i) <- jobs.zipWithIndex) {
-          <tr><td>@j.getTitle()</td><td>@j.getDescription</td><td>@j.getSalary()</td><td><button type="submit" onclick="sendPostRequest('@routes.JobController.deleteJob(i)')">Remove</button></td></tr>
+          <tr><td><a href="@routes.JobController.getJob(i)">@j.getTitle()</a></td><td>@j.getDescription</td><td>@j.getSalary()</td><td><button type="submit" onclick="sendPostRequest('@routes.JobController.deleteJob(i)')">Remove</button></td></tr>
         }
 
 
