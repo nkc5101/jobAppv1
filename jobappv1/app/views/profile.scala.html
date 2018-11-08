@@ -64,7 +64,7 @@ screen and (max-width: 1920px) {
 <body>
 
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
+  <a class="active" href="@routes.MainController.main()">Home</a>
   <a href="@routes.JobController.listJobs()">Jobs</a>
   <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
   <input type="text" placeholder="Search..">
