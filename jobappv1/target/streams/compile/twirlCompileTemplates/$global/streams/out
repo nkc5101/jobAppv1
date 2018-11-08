@@ -1,2 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m[Error] C:\sbt\jobappv1\app\views\jobList.scala.html:43[0m
-[0m[[0m[31merror[0m] [0m[0m}: Not parsed?[0m
+[0m[[0m[31merror[0m] [0m[0m[Error] C:\sbt\jobAppv1\jobappv1\app\views\job.scala.html:78[0m
+[0m[[0m[31merror[0m] [0m[0m      }: Not parsed?[0m

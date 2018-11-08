@@ -31,8 +31,72 @@ object jobList extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Ht
 
 
 Seq[Any](format.raw/*1.39*/("""{"""),format.raw/*1.40*/("""
+  """),format.raw/*2.3*/("""<style>
+  * """),format.raw/*3.5*/("""{"""),format.raw/*3.6*/("""box-sizing: border-box;"""),format.raw/*3.29*/("""}"""),format.raw/*3.30*/("""
 
-    """),format.raw/*3.5*/("""<h1>Jobs</h1>
+  """),format.raw/*5.3*/("""body """),format.raw/*5.8*/("""{"""),format.raw/*5.9*/("""
+    """),format.raw/*6.5*/("""margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  """),format.raw/*8.3*/("""}"""),format.raw/*8.4*/("""
+
+  """),format.raw/*10.3*/(""".topnav """),format.raw/*10.11*/("""{"""),format.raw/*10.12*/("""
+    """),format.raw/*11.5*/("""overflow: hidden;
+    background-color: #e9e9e9;
+  """),format.raw/*13.3*/("""}"""),format.raw/*13.4*/("""
+
+  """),format.raw/*15.3*/(""".topnav a """),format.raw/*15.13*/("""{"""),format.raw/*15.14*/("""
+    """),format.raw/*16.5*/("""float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  """),format.raw/*23.3*/("""}"""),format.raw/*23.4*/("""
+
+  """),format.raw/*25.3*/(""".topnav a:hover """),format.raw/*25.19*/("""{"""),format.raw/*25.20*/("""
+    """),format.raw/*26.5*/("""background-color: #ddd;
+    color: black;
+  """),format.raw/*28.3*/("""}"""),format.raw/*28.4*/("""
+
+  """),format.raw/*30.3*/(""".topnav a.active """),format.raw/*30.20*/("""{"""),format.raw/*30.21*/("""
+    """),format.raw/*31.5*/("""background-color: #2196F3;
+    color: white;
+  """),format.raw/*33.3*/("""}"""),format.raw/*33.4*/("""
+
+  """),format.raw/*35.3*/(""".topnav input[type=text] """),format.raw/*35.28*/("""{"""),format.raw/*35.29*/("""
+    """),format.raw/*36.5*/("""float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 17px;
+  """),format.raw/*42.3*/("""}"""),format.raw/*42.4*/("""
+
+  """),format.raw/*44.3*/("""screen and (max-width: 1920px) """),format.raw/*44.34*/("""{"""),format.raw/*44.35*/("""
+    """),format.raw/*45.5*/(""".topnav a, .topnav input[type=text] """),format.raw/*45.41*/("""{"""),format.raw/*45.42*/("""
+      """),format.raw/*46.7*/("""float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    """),format.raw/*52.5*/("""}"""),format.raw/*52.6*/("""
+    """),format.raw/*53.5*/(""".topnav input[type=text] """),format.raw/*53.30*/("""{"""),format.raw/*53.31*/("""
+      """),format.raw/*54.7*/("""border: 1px solid #ccc;
+    """),format.raw/*55.5*/("""}"""),format.raw/*55.6*/("""
+  """),format.raw/*56.3*/("""}"""),format.raw/*56.4*/("""
+  """),format.raw/*57.3*/("""</style>
+  </head>
+  <body>
+
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href=""""),_display_(/*63.15*/routes/*63.21*/.JobController.listJobs()),format.raw/*63.46*/("""">Jobs</a>
+    <a href=""""),_display_(/*64.15*/routes/*64.21*/.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())),format.raw/*64.99*/("""">Profile</a>
+    <input type="text" placeholder="Search..">
+  </div>
+    <h1>Jobs</h1>
 
 
 
@@ -43,38 +107,38 @@ Seq[Any](format.raw/*1.39*/("""{"""),format.raw/*1.40*/("""
             <tr><th>Title</th><th>Description</th><th>Salary</th><th>Delete Job</th>
         </thead>
         <tbody>
-        """),_display_(/*14.10*/for((j, i) <- jobs.zipWithIndex) yield /*14.42*/ {_display_(Seq[Any](format.raw/*14.44*/("""
-          """),format.raw/*15.11*/("""<tr><td><a href=""""),_display_(/*15.29*/routes/*15.35*/.JobController.getJob(i)),format.raw/*15.59*/("""">"""),_display_(/*15.62*/j/*15.63*/.getTitle()),format.raw/*15.74*/("""</a></td><td>"""),_display_(/*15.88*/j/*15.89*/.getDescription),format.raw/*15.104*/("""</td><td>"""),_display_(/*15.114*/j/*15.115*/.getSalary()),format.raw/*15.127*/("""</td><td><button type="submit" onclick="sendPostRequest('"""),_display_(/*15.185*/routes/*15.191*/.JobController.deleteJob(i)),format.raw/*15.218*/("""')">Remove</button></td></tr>
-        """)))}),format.raw/*16.10*/("""
+        """),_display_(/*78.10*/for((j, i) <- jobs.zipWithIndex) yield /*78.42*/ {_display_(Seq[Any](format.raw/*78.44*/("""
+          """),format.raw/*79.11*/("""<tr><td><a href=""""),_display_(/*79.29*/routes/*79.35*/.JobController.getJob(i)),format.raw/*79.59*/("""">"""),_display_(/*79.62*/j/*79.63*/.getTitle()),format.raw/*79.74*/("""</a></td><td>"""),_display_(/*79.88*/j/*79.89*/.getDescription),format.raw/*79.104*/("""</td><td>"""),_display_(/*79.114*/j/*79.115*/.getSalary()),format.raw/*79.127*/("""</td><td><button type="submit" onclick="sendPostRequest('"""),_display_(/*79.185*/routes/*79.191*/.JobController.deleteJob(i)),format.raw/*79.218*/("""')">Remove</button></td></tr>
+        """)))}),format.raw/*80.10*/("""
 
 
-        """),format.raw/*19.9*/("""</tbody>
+        """),format.raw/*83.9*/("""</tbody>
     </table>
 
     <hr/>
 
-    """),format.raw/*24.66*/("""
-    """),_display_(/*25.6*/if(form.hasGlobalErrors)/*25.30*/ {_display_(Seq[Any](format.raw/*25.32*/("""
-        """),_display_(/*26.10*/form/*26.14*/.globalErrors.asScala.map/*26.39*/ { error: play.data.validation.ValidationError =>_display_(Seq[Any](format.raw/*26.88*/("""
-            """),format.raw/*27.13*/("""<div>
-                """),_display_(/*28.18*/error/*28.23*/.key),format.raw/*28.27*/(""": """),_display_(/*28.30*/error/*28.35*/.message),format.raw/*28.43*/("""
-            """),format.raw/*29.13*/("""</div>
-        """)))}),format.raw/*30.10*/("""
-    """)))}),format.raw/*31.6*/("""
+    """),format.raw/*88.66*/("""
+    """),_display_(/*89.6*/if(form.hasGlobalErrors)/*89.30*/ {_display_(Seq[Any](format.raw/*89.32*/("""
+        """),_display_(/*90.10*/form/*90.14*/.globalErrors.asScala.map/*90.39*/ { error: play.data.validation.ValidationError =>_display_(Seq[Any](format.raw/*90.88*/("""
+            """),format.raw/*91.13*/("""<div>
+                """),_display_(/*92.18*/error/*92.23*/.key),format.raw/*92.27*/(""": """),_display_(/*92.30*/error/*92.35*/.message),format.raw/*92.43*/("""
+            """),format.raw/*93.13*/("""</div>
+        """)))}),format.raw/*94.10*/("""
+    """)))}),format.raw/*95.6*/("""
 
-    """),_display_(/*33.6*/helper/*33.12*/.form(routes.JobController.createJob())/*33.51*/ {_display_(Seq[Any](format.raw/*33.53*/("""
-        """),_display_(/*34.10*/helper/*34.16*/.CSRF.formField),format.raw/*34.31*/("""
+    """),_display_(/*97.6*/helper/*97.12*/.form(routes.JobController.createJob())/*97.51*/ {_display_(Seq[Any](format.raw/*97.53*/("""
+        """),_display_(/*98.10*/helper/*98.16*/.CSRF.formField),format.raw/*98.31*/("""
 
-        """),_display_(/*36.10*/helper/*36.16*/.inputText(form("title"))),format.raw/*36.41*/("""
+        """),_display_(/*100.10*/helper/*100.16*/.inputText(form("title"))),format.raw/*100.41*/("""
 
-        """),_display_(/*38.10*/helper/*38.16*/.textarea(form("description"))),format.raw/*38.46*/("""
+        """),_display_(/*102.10*/helper/*102.16*/.textarea(form("description"))),format.raw/*102.46*/("""
 
-        """),_display_(/*40.10*/helper/*40.16*/.inputText(form("salary"))),format.raw/*40.42*/("""
+        """),_display_(/*104.10*/helper/*104.16*/.inputText(form("salary"))),format.raw/*104.42*/("""
 
-        """),format.raw/*42.9*/("""<button type="submit">Create Job</button>
-    """)))}),format.raw/*43.6*/("""
+        """),format.raw/*106.9*/("""<button type="submit">Create Job</button>
+    """)))}),format.raw/*107.6*/("""
 
-"""),format.raw/*45.1*/("""}"""),format.raw/*45.2*/("""
+"""),format.raw/*109.1*/("""}"""),format.raw/*109.2*/("""
 """))
       }
     }
@@ -91,11 +155,11 @@ Seq[Any](format.raw/*1.39*/("""{"""),format.raw/*1.40*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Nov 06 18:42:15 EST 2018
+                  DATE: Thu Nov 08 14:07:11 EST 2018
                   SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/jobList.scala.html
-                  HASH: 975a5e3c68be354f3172a0129b76d29b7d193716
-                  MATRIX: 966->1|1098->38|1126->39|1160->47|1372->232|1420->264|1460->266|1500->278|1545->296|1560->302|1605->326|1635->329|1645->330|1677->341|1718->355|1728->356|1765->371|1803->381|1814->382|1848->394|1934->452|1950->458|1999->485|2070->525|2111->539|2182->643|2215->650|2248->674|2288->676|2326->687|2339->691|2373->716|2460->765|2502->779|2553->803|2567->808|2592->812|2622->815|2636->820|2665->828|2707->842|2755->859|2792->866|2827->875|2842->881|2890->920|2930->922|2968->933|2983->939|3019->954|3059->967|3074->973|3120->998|3160->1011|3175->1017|3226->1047|3266->1060|3281->1066|3328->1092|3367->1104|3445->1152|3476->1156|3504->1157
-                  LINES: 28->1|33->1|33->1|35->3|46->14|46->14|46->14|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|48->16|51->19|56->24|57->25|57->25|57->25|58->26|58->26|58->26|58->26|59->27|60->28|60->28|60->28|60->28|60->28|60->28|61->29|62->30|63->31|65->33|65->33|65->33|65->33|66->34|66->34|66->34|68->36|68->36|68->36|70->38|70->38|70->38|72->40|72->40|72->40|74->42|75->43|77->45|77->45
+                  HASH: 29cb5593e4c559f86ee2f903b2dc37745407451f
+                  MATRIX: 966->1|1098->38|1126->39|1156->43|1195->56|1222->57|1272->80|1300->81|1332->87|1363->92|1390->93|1422->99|1510->161|1537->162|1570->168|1606->176|1635->177|1668->183|1748->236|1776->237|1809->243|1847->253|1876->254|1909->260|2092->416|2120->417|2153->423|2197->439|2226->440|2259->446|2332->492|2360->493|2393->499|2438->516|2467->517|2500->523|2576->572|2604->573|2637->579|2690->604|2719->605|2752->611|2903->735|2931->736|2964->742|3023->773|3052->774|3085->780|3149->816|3178->817|3213->825|3366->951|3394->952|3427->958|3480->983|3509->984|3544->992|3600->1021|3628->1022|3659->1026|3687->1027|3718->1031|3861->1147|3876->1153|3922->1178|3975->1204|3990->1210|4089->1288|4378->1550|4426->1582|4466->1584|4506->1596|4551->1614|4566->1620|4611->1644|4641->1647|4651->1648|4683->1659|4724->1673|4734->1674|4771->1689|4809->1699|4820->1700|4854->1712|4940->1770|4956->1776|5005->1803|5076->1843|5117->1857|5188->1961|5221->1968|5254->1992|5294->1994|5332->2005|5345->2009|5379->2034|5466->2083|5508->2097|5559->2121|5573->2126|5598->2130|5628->2133|5642->2138|5671->2146|5713->2160|5761->2177|5798->2184|5833->2193|5848->2199|5896->2238|5936->2240|5974->2251|5989->2257|6025->2272|6066->2285|6082->2291|6129->2316|6170->2329|6186->2335|6238->2365|6279->2378|6295->2384|6343->2410|6383->2422|6462->2470|6494->2474|6523->2475
+                  LINES: 28->1|33->1|33->1|34->2|35->3|35->3|35->3|35->3|37->5|37->5|37->5|38->6|40->8|40->8|42->10|42->10|42->10|43->11|45->13|45->13|47->15|47->15|47->15|48->16|55->23|55->23|57->25|57->25|57->25|58->26|60->28|60->28|62->30|62->30|62->30|63->31|65->33|65->33|67->35|67->35|67->35|68->36|74->42|74->42|76->44|76->44|76->44|77->45|77->45|77->45|78->46|84->52|84->52|85->53|85->53|85->53|86->54|87->55|87->55|88->56|88->56|89->57|95->63|95->63|95->63|96->64|96->64|96->64|110->78|110->78|110->78|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|111->79|112->80|115->83|120->88|121->89|121->89|121->89|122->90|122->90|122->90|122->90|123->91|124->92|124->92|124->92|124->92|124->92|124->92|125->93|126->94|127->95|129->97|129->97|129->97|129->97|130->98|130->98|130->98|132->100|132->100|132->100|134->102|134->102|134->102|136->104|136->104|136->104|138->106|139->107|141->109|141->109
                   -- GENERATED --
               */
           

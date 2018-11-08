@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
-// @DATE:Tue Nov 06 18:43:23 EST 2018
+// @DATE:Thu Nov 08 14:09:14 EST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -95,7 +95,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:21
+  // @LINE:22
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -103,7 +103,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:21
+    // @LINE:22
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -123,6 +123,36 @@ package controllers.javascript {
     }
 
   
+    // @LINE:19
+    def updateJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.updateJob",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:16
+    def createJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.createJob",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/create"})
+        }
+      """
+    )
+  
+    // @LINE:17
+    def deleteJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.deleteJob",
+      """
+        function(id0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
     // @LINE:18
     def getJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.JobController.getJob",
@@ -139,26 +169,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs"})
-        }
-      """
-    )
-  
-    // @LINE:17
-    def deleteJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.JobController.deleteJob",
-      """
-        function(id0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
-        }
-      """
-    )
-  
-    // @LINE:16
-    def createJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.JobController.createJob",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/create"})
         }
       """
     )

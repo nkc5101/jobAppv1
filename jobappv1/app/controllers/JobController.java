@@ -47,7 +47,7 @@ public class JobController extends Controller{
 
   public Result deleteJob(int id){
     if(controllers.ProfileController.getLoggedInUser() >= 0){
-      if(id > jobs.size()){
+      if(id < jobs.size()){
         jobs.remove(id);
         return ok(views.html.jobList.render(asScala(jobs), form));
       } else {
@@ -60,6 +60,10 @@ public class JobController extends Controller{
   }
 
   public Result getJob(int id){
-    return ok(views.html.job.render(jobs.get(id), form));
+    return ok(views.html.job.render(jobs.get(id), form, id));
+  }
+
+  public Result updateJob(int id){
+return ok();
   }
 }

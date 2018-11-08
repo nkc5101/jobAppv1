@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
-// @DATE:Tue Nov 06 18:43:23 EST 2018
+// @DATE:Thu Nov 08 14:09:14 EST 2018
 
 
 package router {
