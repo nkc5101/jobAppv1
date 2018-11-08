@@ -10,7 +10,7 @@ import javax.inject.Singleton;
 
 @Singleton
 public class JobController extends Controller{
-  private final Form<JobData> form;
+  private  Form<JobData> form;
   private List<Job> jobs;
 
   @Inject
@@ -21,6 +21,11 @@ public class JobController extends Controller{
   }
 
   public Result listJobs(){
+    JobData data = new JobData();
+    data.setTitle("");
+    data.setDescription("");
+    data.setSalary(0.0);
+    form = form.fill(data);
     if(controllers.ProfileController.getLoggedInUser() >= 0){
       return ok(views.html.jobList.render(asScala(jobs), form));
     } else {
@@ -29,7 +34,9 @@ public class JobController extends Controller{
   }
 
   public Result createJob(){
+
     final Form<JobData> boundForm = form.bindFromRequest();
+
 
     if(controllers.ProfileController.getLoggedInUser() >= 0){
       if(boundForm.hasErrors()){
@@ -60,11 +67,34 @@ public class JobController extends Controller{
   }
 
   public Result getJob(int id){
-    form.fill(Job(jobs.get(id).getTitle(), jobs.get(id).getDescription(), jobs.get(id).getSalary()));
-    return ok(views.html.job.render(jobs.get(id), form, id));
+    if(controllers.ProfileController.getLoggedInUser() >= 0){
+      JobData data = new JobData();
+      data.setTitle(jobs.get(id).getTitle());
+      data.setDescription(jobs.get(id).getDescription());
+      data.setSalary(jobs.get(id).getSalary());
+      form = form.fill(data);
+      return ok(views.html.job.render(jobs.get(id), form, id));
+    } else {
+      return redirect(routes.ProfileController.login());
+    }
+
   }
 
   public Result updateJob(int id){
-return ok();
+    if(controllers.ProfileController.getLoggedInUser() >= 0){
+      final Form<JobData> boundForm = form.bindFromRequest();
+      if(boundForm.hasErrors()){
+        return badRequest(views.html.jobList.render(asScala(jobs), form));
+      } else {
+        JobData data = boundForm.get();
+        jobs.get(id).setTitle(data.getTitle());
+        jobs.get(id).setDescription(data.getDescription());
+        jobs.get(id).setSalary(data.getSalary());
+        flash("info", "Job updated!");
+        return redirect(routes.JobController.listJobs());
+      }
+    } else {
+      return redirect(routes.ProfileController.login());
+    }
   }
 }

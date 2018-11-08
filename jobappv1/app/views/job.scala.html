@@ -70,13 +70,9 @@ screen and (max-width: 1920px) {
   <body>
     @helper.form(routes.JobController.updateJob(index)) {
         @helper.CSRF.formField
-
-        @helper.inputText(form(job.getTitle()))
-
-        @helper.textarea(form(job.getDescription()))
-
-        @helper.inputText(form(job.getSalary().toString()))
-
+        @helper.inputText(form("title"))
+        @helper.inputText(form("description"))
+        @helper.inputText(form("salary"))
         <button type="submit">Update Job</button>
     }
 

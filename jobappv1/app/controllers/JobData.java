@@ -12,6 +12,8 @@ public class JobData{
   @Constraints.Min(0)
   private double salary;
 
+  
+
   public void setTitle(String title){
     this.title = title;
   }
