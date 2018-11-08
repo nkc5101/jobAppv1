@@ -60,6 +60,7 @@ public class JobController extends Controller{
   }
 
   public Result getJob(int id){
+    form.fill(Job(jobs.get(id).getTitle(), jobs.get(id).getDescription(), jobs.get(id).getSalary()));
     return ok(views.html.job.render(jobs.get(id), form, id));
   }
 

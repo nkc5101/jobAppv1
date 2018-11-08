@@ -1,3 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java:67:1:  error: ';' expected[0m
-[0m[[0m[31merror[0m] [0m[0mreturn ok()[0m
-[0m[[0m[31merror[0m] [0m[0m           ^1 error[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java:63:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m    form.fill(Job(jobs.get(id).getTitle(), jobs.get(id).getDescription(), jobs.get(id).getSalary()));[0m
+[0m[[0m[31merror[0m] [0m[0m              ^  symbol:   method Job(String,String,double)[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class JobController[0m
+[0m[[0m[31merror[0m] [0m[0m1 error[0m

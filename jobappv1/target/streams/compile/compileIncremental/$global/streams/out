@@ -1,1 +1,17 @@
-[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed:Set(C:\sbt\jobappv1\app\models\Profile.java, C:\sbt\jobappv1\app\controllers\ProfileLogin.java, C:\sbt\jobappv1\target\scala-2.12\routes\main\controllers\routes.java, C:\sbt\jobappv1\app\controllers\MainController.java, C:\sbt\jobappv1\app\controllers\ProfileData.java, C:\sbt\jobappv1\app\controllers\JobData.java, C:\sbt\jobappv1\app\controllers\ProfileController.java, C:\sbt\jobappv1\app\models\Job.java, C:\sbt\jobappv1\app\controllers\JobController.java)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java)[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Java source to C:\sbt\jobAppv1\jobappv1\target\scala-2.12\classes ...[0m
