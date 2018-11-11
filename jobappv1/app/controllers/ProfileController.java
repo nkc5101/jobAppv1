@@ -1,6 +1,6 @@
 package controllers;
 
-import models.Profile;
+import models.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import play.data.*;
@@ -23,6 +23,7 @@ public class ProfileController extends Controller{
   private  List<Profile> profiles;
   private Form<ProfileLogin> loginForm;
   private static int loggedInUser = -1;
+  private List<Document> docs;
 
   @Inject
   public ProfileController(FormFactory formFactory){
@@ -30,7 +31,7 @@ public class ProfileController extends Controller{
     this.form = formFactory.form(ProfileData.class);
     this.loginForm = formFactory.form(ProfileLogin.class);
     this.profiles = com.google.common.collect.Lists.newArrayList(new Profile("Joe", "Shmoe", "username", "password", 22, "I am an application developer" ));
-
+    this.docs = com.google.common.collect.Lists.newArrayList();
   }
 
   public Result login(){
@@ -132,8 +133,30 @@ public class ProfileController extends Controller{
     return redirect(routes.ProfileController.login());
   }
 
-  public Result upload(){
-    return ok();
+  public Result uploadDoc(){
+    Http.MultipartFormData<File> body = request().body().asMultipartFormData();
+    Http.MultipartFormData.FilePart<File> document = body.getFile("document");
+    if(document != null){
+      String fileName = document.getFilename();
+      File file = document.getFile();
+      docs.add(new Document(fileName, file));
+      return ok(views.html.main.render());
+    } else {
+      return badRequest();
+    }
+  }
+
+  public Result deleteDoc(int id){
+    if(loggedInUser >= 0){
+      if(id < docs.size() && id >= 0){
+        docs.remove(id);
+        return redirect(routes.MainController.main());
+      } else {
+        return badRequest();
+      }
+    } else {
+      return redirect(routes.ProfileController.login());
+    }
   }
 
 }
