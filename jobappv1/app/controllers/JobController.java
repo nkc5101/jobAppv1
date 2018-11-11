@@ -73,7 +73,7 @@ public class JobController extends Controller{
 
     if(controllers.ProfileController.getLoggedInUser() >= 0){
 
-      if(id < jobs.size()){
+      if(id < jobs.size() && id >= 0){
 
         jobs.remove(id);
         return ok(views.html.jobList.render(asScala(jobs), form));
