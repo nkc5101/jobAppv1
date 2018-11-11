@@ -11,7 +11,7 @@ import javax.inject.Singleton;
 @Singleton
 public class JobController extends Controller{
 
-  private final Form<JobData> form;
+  private Form<JobData> form;
   private List<Job> jobs;
 
   @Inject
@@ -23,6 +23,12 @@ public class JobController extends Controller{
   }
 
   public Result listJobs(){
+
+    JobData data = new JobData();
+    data.setTitle("");
+    data.setDescription("");
+    data.setSalary(0.0);
+    form = form.fill(data);
 
     if(controllers.ProfileController.getLoggedInUser() >= 0){
 
@@ -69,7 +75,9 @@ public class JobController extends Controller{
       
       if(id < jobs.size()){
         
-        jobs.remove(id);
+        jobs.remove(jobs.get(id).getTitle());
+        jobs.remove(jobs.get(id).getDescription());
+        jobs.remove(jobs.get(id).getSalary());
         return ok(views.html.jobList.render(asScala(jobs), form));
       
       } else {
@@ -87,14 +95,50 @@ public class JobController extends Controller{
   }
 
   public Result getJob(int id){
+
+    if(controllers.ProfileController.getLoggedInUser() >= 0){
+
+      JobData data = new JobData();
+      data.setTitle(jobs.get(id).getTitle());
+      data.setDescription(jobs.get(id).getDescription());
+      data.setSalary(jobs.get(id).getSalary());
+      form = form.fill(data);
+      return ok(views.html.job.render(jobs.get(id), form, id));
+
+    } else {
+
+      return redirect(routes.ProfileController.login());
     
-    return ok(views.html.job.render(jobs.get(id), form, id));
-  
+    }
+
   }
 
   public Result updateJob(int id){
+
+    if(controllers.ProfileController.getLoggedInUser() >= 0){
+
+      final Form<JobData> boundForm = form.bindFromRequest();
+      
+      if(boundForm.hasErrors()){
+        
+        return badRequest(views.html.jobList.render(asScala(jobs), form));
+      
+      } else {
+
+        JobData data = boundForm.get();
+        jobs.get(id).setTitle(data.getTitle());
+        jobs.get(id).setDescription(data.getDescription());
+        jobs.get(id).setSalary(data.getSalary());
+        flash("info", "Job updated!");
+        return redirect(routes.JobController.listJobs());
+      
+      }
     
-    return ok();
+    } else {
+      
+      return redirect(routes.ProfileController.login());
+    
+    }
   
   }
 

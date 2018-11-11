@@ -16,11 +16,17 @@ import static play.libs.Scala.asScala;
 public class MainController extends Controller{
 
   public Result main(){
+
     if(controllers.ProfileController.getLoggedInUser() >= 0){
-    return ok(views.html.main.render());
-  } else {
-    return redirect(routes.ProfileController.login());
-  }
+
+      return ok(views.html.main.render());
+  
+    } else {
+    
+      return redirect(routes.ProfileController.login());
+  
+    }
 
   }
+  
 }

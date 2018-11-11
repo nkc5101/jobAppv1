@@ -68,7 +68,13 @@ screen and (max-width: 1920px) {
   <input type="text" placeholder="Search..">
 </div>
   <body>
-
+    @helper.form(routes.JobController.updateJob(index)) {
+        @helper.CSRF.formField
+        @helper.inputText(form("title"))
+        @helper.inputText(form("description"))
+        @helper.inputText(form("salary"))
+        <button type="submit">Update Job</button>
+    }
 
   </body>
 <html>

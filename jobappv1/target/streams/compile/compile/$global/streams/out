@@ -1,3 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java:67:1:  error: ';' expected[0m
-[0m[[0m[31merror[0m] [0m[0mreturn ok()[0m
-[0m[[0m[31merror[0m] [0m[0m           ^1 error[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\KEN\Desktop\Penn State\Fall 18\IST 411\Project\jobAppv1\jobappv1\app\views\jobList.scala.html:82:76: not found: value id[0m
+[0m[[0m[31merror[0m] [0m[0m              <button class="delete" href="@routes.JobController.deleteJob(id)">Delete</button>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

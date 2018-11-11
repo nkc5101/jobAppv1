@@ -1,2 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m[Error] C:\sbt\jobAppv1\jobappv1\app\views\job.scala.html:78[0m
-[0m[[0m[31merror[0m] [0m[0m      }: Not parsed?[0m
+[0m[[0m[31merror[0m] [0m[0m[Error] C:\Users\KEN\Desktop\Penn State\Fall 18\IST 411\Project\jobAppv1\jobappv1\app\views\jobList.scala.html:116[0m
+[0m[[0m[31merror[0m] [0m[0m}: Expected ending '}'[0m

@@ -1,17 +1,9 @@
-2018-11-08 14:22:05,346 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-10 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2018-11-08 14:22:05,568 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2018-11-11 15:12:43,740 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-2 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-11 15:12:44,092 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2018-11-08 14:22:05,577 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev)
-2018-11-08 14:51:12,224 [INFO] from play.core.server.AkkaHttpServer in pool-8-thread-1 - Stopping server...
-2018-11-08 14:51:14,703 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in pool-8-thread-1 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2018-11-08 14:51:14,758 [INFO] from play.api.http.EnabledFilters in pool-8-thread-1 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2018-11-08 14:51:14,761 [INFO] from play.api.Play in pool-8-thread-1 - Application started (Dev)
+2018-11-11 15:12:44,099 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2018-11-11 15:13:09,790 [INFO] from play.core.server.AkkaHttpServer in pool-7-thread-5 - Stopping server...
