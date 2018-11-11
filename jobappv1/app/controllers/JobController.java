@@ -33,13 +33,13 @@ public class JobController extends Controller{
     if(controllers.ProfileController.getLoggedInUser() >= 0){
 
       return ok(views.html.jobList.render(asScala(jobs), form));
-    
+
     } else {
-      
+
       return redirect(routes.ProfileController.login());
-    
+
     }
-  
+
   }
 
   public Result createJob(){
@@ -49,47 +49,45 @@ public class JobController extends Controller{
     if(controllers.ProfileController.getLoggedInUser() >= 0){
 
       if(boundForm.hasErrors()){
-        
+
         return badRequest(views.html.jobList.render(asScala(jobs), form));
-      
+
       } else {
-        
+
         JobData data = boundForm.get();
         jobs.add(new Job(data.getTitle(), data.getDescription(), data.getSalary()));
         flash("info", "Job added!");
         return redirect(routes.JobController.listJobs());
-      
+
       }
-    
+
     } else {
-      
+
       return redirect(routes.ProfileController.login());
-    
+
     }
-  
+
   }
 
   public Result deleteJob(int id){
-    
+
     if(controllers.ProfileController.getLoggedInUser() >= 0){
-      
+
       if(id < jobs.size()){
-        
-        jobs.remove(jobs.get(id).getTitle());
-        jobs.remove(jobs.get(id).getDescription());
-        jobs.remove(jobs.get(id).getSalary());
+
+        jobs.remove(id);
         return ok(views.html.jobList.render(asScala(jobs), form));
-      
+
       } else {
-        
+
         return badRequest(views.html.jobList.render(asScala(jobs), form));
-      
+
       }
-    
+
     } else {
-      
+
       return redirect(routes.ProfileController.login());
-    
+
     }
 
   }
@@ -108,7 +106,7 @@ public class JobController extends Controller{
     } else {
 
       return redirect(routes.ProfileController.login());
-    
+
     }
 
   }
@@ -118,11 +116,11 @@ public class JobController extends Controller{
     if(controllers.ProfileController.getLoggedInUser() >= 0){
 
       final Form<JobData> boundForm = form.bindFromRequest();
-      
+
       if(boundForm.hasErrors()){
-        
+
         return badRequest(views.html.jobList.render(asScala(jobs), form));
-      
+
       } else {
 
         JobData data = boundForm.get();
@@ -131,15 +129,15 @@ public class JobController extends Controller{
         jobs.get(id).setSalary(data.getSalary());
         flash("info", "Job updated!");
         return redirect(routes.JobController.listJobs());
-      
+
       }
-    
+
     } else {
-      
+
       return redirect(routes.ProfileController.login());
-    
+
     }
-  
+
   }
 
 }

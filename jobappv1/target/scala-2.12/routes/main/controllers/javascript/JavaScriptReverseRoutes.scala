@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/KEN/Desktop/Penn State/Fall 18/IST 411/Project/jobAppv1/jobappv1/conf/routes
-// @DATE:Thu Nov 08 14:21:52 EST 2018
+// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
+// @DATE:Sun Nov 11 15:41:17 EST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -35,6 +35,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "profiles/create"})
+        }
+      """
+    )
+  
+    // @LINE:20
+    def logOut: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ProfileController.logOut",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
         }
       """
     )
@@ -95,7 +105,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:23
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -103,7 +113,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:23
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -148,7 +158,7 @@ package controllers.javascript {
       "controllers.JobController.deleteJob",
       """
         function(id0) {
-          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0)) + "/delete"})
         }
       """
     )

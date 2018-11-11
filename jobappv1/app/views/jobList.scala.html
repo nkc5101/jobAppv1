@@ -63,6 +63,7 @@
     <a href="@routes.JobController.listJobs()">Jobs</a>
     <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
     <input type="text" placeholder="Search..">
+    <a href="@routes.ProfileController.logOut()">Log Out</a>
   </div>
     <h1>Jobs</h1>
 
@@ -80,12 +81,12 @@
             <td>@helper.form(routes.JobController.deleteJob(i)) {
 
               <button class="delete" href="@routes.JobController.deleteJob(i)">Delete</button>
-              
+
 
             }
 
             </td></tr>
-        
+
         }
 
         </tbody>
@@ -113,5 +114,3 @@
 
         <button type="submit">Create Job</button>
     }
-
-
