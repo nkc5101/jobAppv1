@@ -5,6 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import play.data.*;
 import play.mvc.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 
 import javax.inject.Inject;
@@ -127,6 +130,10 @@ public class ProfileController extends Controller{
   public Result logOut(){
     loggedInUser = -1;
     return redirect(routes.ProfileController.login());
+  }
+
+  public Result upload(){
+    return ok();
   }
 
 }
