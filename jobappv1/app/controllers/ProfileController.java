@@ -1,8 +1,6 @@
 package controllers;
 
 import models.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import play.data.*;
 import play.mvc.*;
 import java.io.File;
@@ -19,8 +17,9 @@ import static play.libs.Scala.asScala;
 @Singleton
 public class ProfileController extends Controller{
 
-  private final Form<ProfileData> form;
+  private  Form<ProfileData> form;
   private  List<Profile> profiles;
+  private Form<SearchForm> searchForm;
   private Form<ProfileLogin> loginForm;
   private static int loggedInUser = -1;
   private List<Document> docs;
@@ -30,6 +29,7 @@ public class ProfileController extends Controller{
 
     this.form = formFactory.form(ProfileData.class);
     this.loginForm = formFactory.form(ProfileLogin.class);
+    this.searchForm = formFactory.form(SearchForm.class);
     this.profiles = com.google.common.collect.Lists.newArrayList(new Profile("Joe", "Shmoe", "username", "password", 22, "I am an application developer" ));
     this.docs = com.google.common.collect.Lists.newArrayList();
   }
@@ -38,6 +38,7 @@ public class ProfileController extends Controller{
     ProfileLogin data = new ProfileLogin();
     data.setUsername("");
     data.setPassword("");
+    loginForm = loginForm.fill(data);
     return ok(views.html.login.render(loginForm));
 
   }
@@ -80,8 +81,15 @@ public class ProfileController extends Controller{
     Profile returnedProfile = profiles.get(id);
 
     if(returnedProfile == profiles.get(loggedInUser)){
-
-      return ok(views.html.profile.render(returnedProfile));
+      ProfileData data = new ProfileData();
+      data.setFirstName(returnedProfile.getFirstName());
+      data.setLastName(returnedProfile.getLastName());
+      data.setUsername(returnedProfile.getUsername());
+      data.setAge(returnedProfile.getAge());
+      data.setPassword(returnedProfile.getPassword());
+      data.setBiography(returnedProfile.getBiography());
+      form = form.fill(data);
+      return ok(views.html.profile.render(form, searchForm, loggedInUser));
 
     } else {
 
@@ -140,7 +148,7 @@ public class ProfileController extends Controller{
       String fileName = document.getFilename();
       File file = document.getFile();
       docs.add(new Document(fileName, file));
-      return ok(views.html.main.render());
+      return ok(views.html.main.render(searchForm));
     } else {
       return badRequest();
     }
@@ -159,4 +167,33 @@ public class ProfileController extends Controller{
     }
   }
 
+  public Result updateProfile(int id){
+    if(loggedInUser >= 0){
+      final Form<ProfileData> boundForm = form.bindFromRequest();
+
+      if(boundForm.hasErrors()){
+
+        return redirect(routes.ProfileController.getProfile(loggedInUser));
+
+      } else {
+
+        ProfileData data = boundForm.get();
+        profiles.get(loggedInUser).setFirstName(data.getFirstName());
+        profiles.get(loggedInUser).setLastName(data.getLastName());
+        profiles.get(loggedInUser).setUsername(data.getUsername());
+        profiles.get(loggedInUser).setPassword(data.getPassword());
+        profiles.get(loggedInUser).setAge(data.getAge());
+        profiles.get(loggedInUser).setBiography(data.getBiography());
+        flash("info", "Job updated!");
+        return redirect(routes.ProfileController.getProfile(loggedInUser));
+
+      }
+
+    } else {
+
+      return redirect(routes.ProfileController.login());
+
+    }
+
+}
 }

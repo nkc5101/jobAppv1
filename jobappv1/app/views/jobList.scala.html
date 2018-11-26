@@ -1,4 +1,4 @@
-@(jobs: Seq[Job], form: Form[JobData])
+@(jobs: Seq[Job], form: Form[JobData], searchForm: Form[SearchForm])
   <style>
   * {box-sizing: border-box;}
 
@@ -62,7 +62,12 @@
     <a class="active" href="@routes.MainController.main()">Home</a>
     <a href="@routes.JobController.listJobs()">Jobs</a>
     <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
-    <input type="text" placeholder="Search..">
+    @helper.form(routes.JobController.search()) {
+      @helper.CSRF.formField
+      @helper.inputText(searchForm("searchTerms"))
+
+      <button type="submit">Search</button>
+    }
     <a href="@routes.ProfileController.logOut()">Log Out</a>
   </div>
     <h1>Jobs</h1>
@@ -77,7 +82,7 @@
         </thead>
         <tbody>
         @for((j, i) <- jobs.zipWithIndex) {
-          <tr><td><a href="@routes.JobController.getJob(i)">@j.getTitle()</a></td><td>@j.getDescription</td><td>@j.getSalary()</td>
+          <tr><td><a href="@routes.JobController.getJob(i)">@j.getTitle()</a></td><td>@j.getDescription</td><td>@j.getSalary()</td><td>@j.getCompany()</td>
             <td>@helper.form(routes.JobController.deleteJob(i)) {
 
               <button class="delete" href="@routes.JobController.deleteJob(i)">Delete</button>
@@ -111,6 +116,8 @@
         @helper.textarea(form("description"))
 
         @helper.inputText(form("salary"))
+
+        @helper.inputText(form("company"))
 
         <button type="submit">Create Job</button>
     }

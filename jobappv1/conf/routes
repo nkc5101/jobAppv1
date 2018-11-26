@@ -18,6 +18,8 @@ GET    /jobs/:id/delete            controllers.JobController.deleteJob(id:Int)
 GET    /jobs/:id                   controllers.JobController.getJob(id:Int)
 POST   /jobs/:id                   controllers.JobController.updateJob(id:Int)
 GET    /logout                     controllers.ProfileController.logOut()
+POST   /profiles/:id               controllers.ProfileController.updateProfile(id:Int)
+POST   /search                     controllers.JobController.search()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

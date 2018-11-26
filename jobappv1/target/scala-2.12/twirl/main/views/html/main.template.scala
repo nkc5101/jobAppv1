@@ -22,83 +22,90 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[SearchForm],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(form: Form[SearchForm]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
+Seq[Any](format.raw/*1.26*/("""
+"""),format.raw/*2.1*/("""<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* """),format.raw/*6.3*/("""{"""),format.raw/*6.4*/("""box-sizing: border-box;"""),format.raw/*6.27*/("""}"""),format.raw/*6.28*/("""
+* """),format.raw/*7.3*/("""{"""),format.raw/*7.4*/("""box-sizing: border-box;"""),format.raw/*7.27*/("""}"""),format.raw/*7.28*/("""
 
-"""),format.raw/*8.1*/("""body """),format.raw/*8.6*/("""{"""),format.raw/*8.7*/("""
-  """),format.raw/*9.3*/("""margin: 0;
+"""),format.raw/*9.1*/("""body """),format.raw/*9.6*/("""{"""),format.raw/*9.7*/("""
+  """),format.raw/*10.3*/("""margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-"""),format.raw/*11.1*/("""}"""),format.raw/*11.2*/("""
+"""),format.raw/*12.1*/("""}"""),format.raw/*12.2*/("""
 
-"""),format.raw/*13.1*/(""".topnav """),format.raw/*13.9*/("""{"""),format.raw/*13.10*/("""
-  """),format.raw/*14.3*/("""overflow: hidden;
+"""),format.raw/*14.1*/(""".topnav """),format.raw/*14.9*/("""{"""),format.raw/*14.10*/("""
+  """),format.raw/*15.3*/("""overflow: hidden;
   background-color: #e9e9e9;
-"""),format.raw/*16.1*/("""}"""),format.raw/*16.2*/("""
+"""),format.raw/*17.1*/("""}"""),format.raw/*17.2*/("""
 
-"""),format.raw/*18.1*/(""".topnav a """),format.raw/*18.11*/("""{"""),format.raw/*18.12*/("""
-  """),format.raw/*19.3*/("""float: left;
+"""),format.raw/*19.1*/(""".topnav a """),format.raw/*19.11*/("""{"""),format.raw/*19.12*/("""
+  """),format.raw/*20.3*/("""float: left;
   display: block;
   color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-"""),format.raw/*26.1*/("""}"""),format.raw/*26.2*/("""
+"""),format.raw/*27.1*/("""}"""),format.raw/*27.2*/("""
 
-"""),format.raw/*28.1*/(""".topnav a:hover """),format.raw/*28.17*/("""{"""),format.raw/*28.18*/("""
-  """),format.raw/*29.3*/("""background-color: #ddd;
+"""),format.raw/*29.1*/(""".topnav a:hover """),format.raw/*29.17*/("""{"""),format.raw/*29.18*/("""
+  """),format.raw/*30.3*/("""background-color: #ddd;
   color: black;
-"""),format.raw/*31.1*/("""}"""),format.raw/*31.2*/("""
+"""),format.raw/*32.1*/("""}"""),format.raw/*32.2*/("""
 
-"""),format.raw/*33.1*/(""".topnav a.active """),format.raw/*33.18*/("""{"""),format.raw/*33.19*/("""
-  """),format.raw/*34.3*/("""background-color: #2196F3;
+"""),format.raw/*34.1*/(""".topnav a.active """),format.raw/*34.18*/("""{"""),format.raw/*34.19*/("""
+  """),format.raw/*35.3*/("""background-color: #2196F3;
   color: white;
-"""),format.raw/*36.1*/("""}"""),format.raw/*36.2*/("""
+"""),format.raw/*37.1*/("""}"""),format.raw/*37.2*/("""
 
-"""),format.raw/*38.1*/(""".topnav input[type=text] """),format.raw/*38.26*/("""{"""),format.raw/*38.27*/("""
-  """),format.raw/*39.3*/("""float: right;
+"""),format.raw/*39.1*/(""".topnav input[type=text] """),format.raw/*39.26*/("""{"""),format.raw/*39.27*/("""
+  """),format.raw/*40.3*/("""float: right;
   padding: 6px;
   margin-top: 8px;
   margin-right: 16px;
   border: none;
   font-size: 17px;
-"""),format.raw/*45.1*/("""}"""),format.raw/*45.2*/("""
+"""),format.raw/*46.1*/("""}"""),format.raw/*46.2*/("""
 
-"""),format.raw/*47.1*/("""screen and (max-width: 1920px) """),format.raw/*47.32*/("""{"""),format.raw/*47.33*/("""
-  """),format.raw/*48.3*/(""".topnav a, .topnav input[type=text] """),format.raw/*48.39*/("""{"""),format.raw/*48.40*/("""
-    """),format.raw/*49.5*/("""float: none;
+"""),format.raw/*48.1*/("""screen and (max-width: 1920px) """),format.raw/*48.32*/("""{"""),format.raw/*48.33*/("""
+  """),format.raw/*49.3*/(""".topnav a, .topnav input[type=text] """),format.raw/*49.39*/("""{"""),format.raw/*49.40*/("""
+    """),format.raw/*50.5*/("""float: none;
     display: block;
     text-align: left;
     width: 100%;
     margin: 0;
     padding: 14px;
-  """),format.raw/*55.3*/("""}"""),format.raw/*55.4*/("""
-  """),format.raw/*56.3*/(""".topnav input[type=text] """),format.raw/*56.28*/("""{"""),format.raw/*56.29*/("""
-    """),format.raw/*57.5*/("""border: 1px solid #ccc;
-  """),format.raw/*58.3*/("""}"""),format.raw/*58.4*/("""
-"""),format.raw/*59.1*/("""}"""),format.raw/*59.2*/("""
-"""),format.raw/*60.1*/("""</style>
+  """),format.raw/*56.3*/("""}"""),format.raw/*56.4*/("""
+  """),format.raw/*57.3*/(""".topnav input[type=text] """),format.raw/*57.28*/("""{"""),format.raw/*57.29*/("""
+    """),format.raw/*58.5*/("""border: 1px solid #ccc;
+  """),format.raw/*59.3*/("""}"""),format.raw/*59.4*/("""
+"""),format.raw/*60.1*/("""}"""),format.raw/*60.2*/("""
+"""),format.raw/*61.1*/("""</style>
 </head>
 <body>
 
 <div class="topnav">
   <a class="active" href="#home">Home</a>
-  <a href=""""),_display_(/*66.13*/routes/*66.19*/.JobController.listJobs()),format.raw/*66.44*/("""">Jobs</a>
-  <a href=""""),_display_(/*67.13*/routes/*67.19*/.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())),format.raw/*67.97*/("""">Profile</a>
-  <input type="text" placeholder="Search..">
-  <a href=""""),_display_(/*69.13*/routes/*69.19*/.ProfileController.logOut()),format.raw/*69.46*/("""">Log Out</a>
+  <a href=""""),_display_(/*67.13*/routes/*67.19*/.JobController.listJobs()),format.raw/*67.44*/("""">Jobs</a>
+  <a href=""""),_display_(/*68.13*/routes/*68.19*/.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())),format.raw/*68.97*/("""">Profile</a>
+  """),_display_(/*69.4*/helper/*69.10*/.form(routes.JobController.search())/*69.46*/ {_display_(Seq[Any](format.raw/*69.48*/("""
+    """),_display_(/*70.6*/helper/*70.12*/.CSRF.formField),format.raw/*70.27*/("""
+    """),_display_(/*71.6*/helper/*71.12*/.inputText(form("searchTerms"))),format.raw/*71.43*/("""
+
+    """),format.raw/*73.5*/("""<button type="submit">Search</button>
+  """)))}),format.raw/*74.4*/("""
+
+  """),format.raw/*76.3*/("""<a href=""""),_display_(/*76.13*/routes/*76.19*/.ProfileController.logOut()),format.raw/*76.46*/("""">Log Out</a>
 </div>
 
 <div style="padding-left:16px">
@@ -115,9 +122,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(form:Form[SearchForm]): play.twirl.api.HtmlFormat.Appendable = apply(form)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((Form[SearchForm]) => play.twirl.api.HtmlFormat.Appendable) = (form) => apply(form)
 
   def ref: this.type = this
 
@@ -126,11 +133,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Sun Nov 11 15:41:17 EST 2018
-                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/main.scala.html
-                  HASH: 2cd91fde783c73516407beba49651083682375c8
-                  MATRIX: 1029->0|1169->114|1196->115|1246->138|1274->139|1304->143|1335->148|1362->149|1392->153|1477->211|1505->212|1536->216|1571->224|1600->225|1631->229|1707->278|1735->279|1766->283|1804->293|1833->294|1864->298|2033->440|2061->441|2092->445|2136->461|2165->462|2196->466|2265->508|2293->509|2324->513|2369->530|2398->531|2429->535|2501->580|2529->581|2560->585|2613->610|2642->611|2673->615|2812->727|2840->728|2871->732|2930->763|2959->764|2990->768|3054->804|3083->805|3116->811|3257->925|3285->926|3316->930|3369->955|3398->956|3431->962|3485->989|3513->990|3542->992|3570->993|3599->995|3732->1101|3747->1107|3793->1132|3844->1156|3859->1162|3958->1240|4058->1313|4073->1319|4121->1346
-                  LINES: 33->1|38->6|38->6|38->6|38->6|40->8|40->8|40->8|41->9|43->11|43->11|45->13|45->13|45->13|46->14|48->16|48->16|50->18|50->18|50->18|51->19|58->26|58->26|60->28|60->28|60->28|61->29|63->31|63->31|65->33|65->33|65->33|66->34|68->36|68->36|70->38|70->38|70->38|71->39|77->45|77->45|79->47|79->47|79->47|80->48|80->48|80->48|81->49|87->55|87->55|88->56|88->56|88->56|89->57|90->58|90->58|91->59|91->59|92->60|98->66|98->66|98->66|99->67|99->67|99->67|101->69|101->69|101->69
+                  DATE: Sun Nov 25 19:22:24 EST 2018
+                  SOURCE: C:/sbt/jobappv1/app/views/main.scala.html
+                  HASH: b562eb3f814519b5b231ac8279d22c087d31c12b
+                  MATRIX: 957->1|1076->25|1104->27|1244->141|1271->142|1321->165|1349->166|1379->170|1410->175|1437->176|1468->180|1553->238|1581->239|1612->243|1647->251|1676->252|1707->256|1783->305|1811->306|1842->310|1880->320|1909->321|1940->325|2109->467|2137->468|2168->472|2212->488|2241->489|2272->493|2341->535|2369->536|2400->540|2445->557|2474->558|2505->562|2577->607|2605->608|2636->612|2689->637|2718->638|2749->642|2888->754|2916->755|2947->759|3006->790|3035->791|3066->795|3130->831|3159->832|3192->838|3333->952|3361->953|3392->957|3445->982|3474->983|3507->989|3561->1016|3589->1017|3618->1019|3646->1020|3675->1022|3808->1128|3823->1134|3869->1159|3920->1183|3935->1189|4034->1267|4078->1285|4093->1291|4138->1327|4178->1329|4211->1336|4226->1342|4262->1357|4295->1364|4310->1370|4362->1401|4397->1409|4469->1451|4502->1457|4539->1467|4554->1473|4602->1500
+                  LINES: 28->1|33->1|34->2|39->7|39->7|39->7|39->7|41->9|41->9|41->9|42->10|44->12|44->12|46->14|46->14|46->14|47->15|49->17|49->17|51->19|51->19|51->19|52->20|59->27|59->27|61->29|61->29|61->29|62->30|64->32|64->32|66->34|66->34|66->34|67->35|69->37|69->37|71->39|71->39|71->39|72->40|78->46|78->46|80->48|80->48|80->48|81->49|81->49|81->49|82->50|88->56|88->56|89->57|89->57|89->57|90->58|91->59|91->59|92->60|92->60|93->61|99->67|99->67|99->67|100->68|100->68|100->68|101->69|101->69|101->69|101->69|102->70|102->70|102->70|103->71|103->71|103->71|105->73|106->74|108->76|108->76|108->76|108->76
                   -- GENERATED --
               */
           

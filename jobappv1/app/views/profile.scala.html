@@ -1,4 +1,4 @@
-@(profile: Profile)
+@(form: Form[ProfileData], searchForm: Form[SearchForm], index: Int)
 
 
 
@@ -67,21 +67,26 @@ screen and (max-width: 1920px) {
   <a class="active" href="@routes.MainController.main()">Home</a>
   <a href="@routes.JobController.listJobs()">Jobs</a>
   <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
-  <input type="text" placeholder="Search..">
+  @helper.form(routes.JobController.search()) {
+    @helper.CSRF.formField
+    @helper.inputText(form("searchTerms"))
+
+    <button type="submit">Search</button>
+  }
   <a href="@routes.ProfileController.logOut()">Log Out</a>
 </div>
   <body>
     <div id="person-stats">
-
-      <h4>Name: </h4>
-      <p>@(profile.getFirstName() + " " + profile.getLastName())</p>
-
-      <h4>Age: </h4><p>@(profile.getAge())</p>
-      <h4>Password: </h4><p>@(profile.getPassword())</<p>
-    </div>
-    <div id="person-bio">
-      <h4>Biography:</h4>
-      <p>@(profile.getBiography())</p>
+      @helper.form(routes.ProfileController.updateProfile(index)) {
+          @helper.CSRF.formField
+          @helper.inputText(form("firstName"))
+          @helper.inputText(form("lastName"))
+          @helper.inputText(form("username"))
+          @helper.inputPassword(form("password"))
+          @helper.inputText(form("age"))
+          @helper.textarea(form("biography"))
+          <button type="submit">Update Profile</button>
+      }
     </div>
   </body>
 <html>

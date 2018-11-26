@@ -22,15 +22,15 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object profile extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Profile,play.twirl.api.HtmlFormat.Appendable] {
+object profile extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[Form[ProfileData],Form[SearchForm],Int,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(profile: Profile):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(form: Form[ProfileData], searchForm: Form[SearchForm], index: Int):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.20*/("""
+Seq[Any](format.raw/*1.69*/("""
 
 
 
@@ -99,22 +99,27 @@ Seq[Any](format.raw/*1.20*/("""
   <a class="active" href=""""),_display_(/*67.28*/routes/*67.34*/.MainController.main()),format.raw/*67.56*/("""">Home</a>
   <a href=""""),_display_(/*68.13*/routes/*68.19*/.JobController.listJobs()),format.raw/*68.44*/("""">Jobs</a>
   <a href=""""),_display_(/*69.13*/routes/*69.19*/.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())),format.raw/*69.97*/("""">Profile</a>
-  <input type="text" placeholder="Search..">
-  <a href=""""),_display_(/*71.13*/routes/*71.19*/.ProfileController.logOut()),format.raw/*71.46*/("""">Log Out</a>
+  """),_display_(/*70.4*/helper/*70.10*/.form(routes.JobController.search())/*70.46*/ {_display_(Seq[Any](format.raw/*70.48*/("""
+    """),_display_(/*71.6*/helper/*71.12*/.CSRF.formField),format.raw/*71.27*/("""
+    """),_display_(/*72.6*/helper/*72.12*/.inputText(form("searchTerms"))),format.raw/*72.43*/("""
+
+    """),format.raw/*74.5*/("""<button type="submit">Search</button>
+  """)))}),format.raw/*75.4*/("""
+  """),format.raw/*76.3*/("""<a href=""""),_display_(/*76.13*/routes/*76.19*/.ProfileController.logOut()),format.raw/*76.46*/("""">Log Out</a>
 </div>
   <body>
     <div id="person-stats">
-
-      <h4>Name: </h4>
-      <p>"""),_display_(/*77.11*/(profile.getFirstName() + " " + profile.getLastName())),format.raw/*77.65*/("""</p>
-
-      <h4>Age: </h4><p>"""),_display_(/*79.25*/(profile.getAge())),format.raw/*79.43*/("""</p>
-      <h4>Password: </h4><p>"""),_display_(/*80.30*/(profile.getPassword())),format.raw/*80.53*/("""</<p>
-    </div>
-    <div id="person-bio">
-      <h4>Biography:</h4>
-      <p>"""),_display_(/*84.11*/(profile.getBiography())),format.raw/*84.35*/("""</p>
-    </div>
+      """),_display_(/*80.8*/helper/*80.14*/.form(routes.ProfileController.updateProfile(index))/*80.66*/ {_display_(Seq[Any](format.raw/*80.68*/("""
+          """),_display_(/*81.12*/helper/*81.18*/.CSRF.formField),format.raw/*81.33*/("""
+          """),_display_(/*82.12*/helper/*82.18*/.inputText(form("firstName"))),format.raw/*82.47*/("""
+          """),_display_(/*83.12*/helper/*83.18*/.inputText(form("lastName"))),format.raw/*83.46*/("""
+          """),_display_(/*84.12*/helper/*84.18*/.inputText(form("username"))),format.raw/*84.46*/("""
+          """),_display_(/*85.12*/helper/*85.18*/.inputPassword(form("password"))),format.raw/*85.50*/("""
+          """),_display_(/*86.12*/helper/*86.18*/.inputText(form("age"))),format.raw/*86.41*/("""
+          """),_display_(/*87.12*/helper/*87.18*/.textarea(form("biography"))),format.raw/*87.46*/("""
+          """),format.raw/*88.11*/("""<button type="submit">Update Profile</button>
+      """)))}),format.raw/*89.8*/("""
+    """),format.raw/*90.5*/("""</div>
   </body>
 <html>
 """))
@@ -122,9 +127,9 @@ Seq[Any](format.raw/*1.20*/("""
     }
   }
 
-  def render(profile:Profile): play.twirl.api.HtmlFormat.Appendable = apply(profile)
+  def render(form:Form[ProfileData],searchForm:Form[SearchForm],index:Int): play.twirl.api.HtmlFormat.Appendable = apply(form,searchForm,index)
 
-  def f:((Profile) => play.twirl.api.HtmlFormat.Appendable) = (profile) => apply(profile)
+  def f:((Form[ProfileData],Form[SearchForm],Int) => play.twirl.api.HtmlFormat.Appendable) = (form,searchForm,index) => apply(form,searchForm,index)
 
   def ref: this.type = this
 
@@ -133,11 +138,11 @@ Seq[Any](format.raw/*1.20*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Nov 11 15:41:18 EST 2018
-                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/profile.scala.html
-                  HASH: c28f20379589d8e1a71ae30807a345286d3fbca8
-                  MATRIX: 951->1|1064->19|1098->27|1170->73|1197->74|1247->97|1275->98|1306->102|1338->107|1366->108|1397->112|1482->170|1510->171|1541->175|1576->183|1605->184|1636->188|1712->237|1740->238|1771->242|1809->252|1838->253|1869->257|2038->399|2066->400|2097->404|2141->420|2170->421|2201->425|2270->467|2298->468|2329->472|2374->489|2403->490|2434->494|2506->539|2534->540|2565->544|2618->569|2647->570|2678->574|2817->686|2845->687|2876->691|2935->722|2964->723|2995->727|3059->763|3088->764|3121->770|3262->884|3290->885|3321->889|3374->914|3403->915|3436->921|3490->948|3518->949|3547->951|3575->952|3604->954|3702->1025|3717->1031|3760->1053|3811->1077|3826->1083|3872->1108|3923->1132|3938->1138|4037->1216|4137->1289|4152->1295|4200->1322|4324->1419|4399->1473|4458->1505|4497->1523|4559->1558|4603->1581|4713->1664|4758->1688
-                  LINES: 28->1|33->1|37->5|40->8|40->8|40->8|40->8|42->10|42->10|42->10|43->11|45->13|45->13|47->15|47->15|47->15|48->16|50->18|50->18|52->20|52->20|52->20|53->21|60->28|60->28|62->30|62->30|62->30|63->31|65->33|65->33|67->35|67->35|67->35|68->36|70->38|70->38|72->40|72->40|72->40|73->41|79->47|79->47|81->49|81->49|81->49|82->50|82->50|82->50|83->51|89->57|89->57|90->58|90->58|90->58|91->59|92->60|92->60|93->61|93->61|94->62|99->67|99->67|99->67|100->68|100->68|100->68|101->69|101->69|101->69|103->71|103->71|103->71|109->77|109->77|111->79|111->79|112->80|112->80|116->84|116->84
+                  DATE: Sun Nov 25 19:51:00 EST 2018
+                  SOURCE: C:/sbt/jobappv1/app/views/profile.scala.html
+                  HASH: 87db772e10cf3577f6e2c5591074a9f0b3a08db3
+                  MATRIX: 982->1|1144->68|1178->76|1250->122|1277->123|1327->146|1355->147|1386->151|1418->156|1446->157|1477->161|1562->219|1590->220|1621->224|1656->232|1685->233|1716->237|1792->286|1820->287|1851->291|1889->301|1918->302|1949->306|2118->448|2146->449|2177->453|2221->469|2250->470|2281->474|2350->516|2378->517|2409->521|2454->538|2483->539|2514->543|2586->588|2614->589|2645->593|2698->618|2727->619|2758->623|2897->735|2925->736|2956->740|3015->771|3044->772|3075->776|3139->812|3168->813|3201->819|3342->933|3370->934|3401->938|3454->963|3483->964|3516->970|3570->997|3598->998|3627->1000|3655->1001|3684->1003|3782->1074|3797->1080|3840->1102|3891->1126|3906->1132|3952->1157|4003->1181|4018->1187|4117->1265|4161->1283|4176->1289|4221->1325|4261->1327|4294->1334|4309->1340|4345->1355|4378->1362|4393->1368|4445->1399|4480->1407|4552->1449|4583->1453|4620->1463|4635->1469|4683->1496|4778->1565|4793->1571|4854->1623|4894->1625|4934->1638|4949->1644|4985->1659|5025->1672|5040->1678|5090->1707|5130->1720|5145->1726|5194->1754|5234->1767|5249->1773|5298->1801|5338->1814|5353->1820|5406->1852|5446->1865|5461->1871|5505->1894|5545->1907|5560->1913|5609->1941|5649->1953|5733->2007|5766->2013
+                  LINES: 28->1|33->1|37->5|40->8|40->8|40->8|40->8|42->10|42->10|42->10|43->11|45->13|45->13|47->15|47->15|47->15|48->16|50->18|50->18|52->20|52->20|52->20|53->21|60->28|60->28|62->30|62->30|62->30|63->31|65->33|65->33|67->35|67->35|67->35|68->36|70->38|70->38|72->40|72->40|72->40|73->41|79->47|79->47|81->49|81->49|81->49|82->50|82->50|82->50|83->51|89->57|89->57|90->58|90->58|90->58|91->59|92->60|92->60|93->61|93->61|94->62|99->67|99->67|99->67|100->68|100->68|100->68|101->69|101->69|101->69|102->70|102->70|102->70|102->70|103->71|103->71|103->71|104->72|104->72|104->72|106->74|107->75|108->76|108->76|108->76|108->76|112->80|112->80|112->80|112->80|113->81|113->81|113->81|114->82|114->82|114->82|115->83|115->83|115->83|116->84|116->84|116->84|117->85|117->85|117->85|118->86|118->86|118->86|119->87|119->87|119->87|120->88|121->89|122->90
                   -- GENERATED --
               */
           

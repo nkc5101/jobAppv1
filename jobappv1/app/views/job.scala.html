@@ -1,4 +1,4 @@
-@(job: Job, form: Form[JobData], index: Int)
+@(form: Form[JobData], searchForm: Form[SearchForm], index: Int)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +65,12 @@ screen and (max-width: 1920px) {
   <a class="active" href="@routes.MainController.main()">Home</a>
   <a href="@routes.JobController.listJobs()">Jobs</a>
   <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
-  <input type="text" placeholder="Search..">
+  @helper.form(routes.JobController.search()) {
+    @helper.CSRF.formField
+    @helper.inputText(searchForm("searchTerms"))
+
+    <button type="submit">Search</button>
+  }
   <a href="@routes.ProfileController.logOut()">Log Out</a>
 </div>
   <body>
@@ -74,6 +79,7 @@ screen and (max-width: 1920px) {
         @helper.inputText(form("title"))
         @helper.inputText(form("description"))
         @helper.inputText(form("salary"))
+        @helper.inputText(form("company"))
         <button type="submit">Update Job</button>
     }
 

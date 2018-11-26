@@ -1,3 +1,16 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\ProfileController.java:160:1:  error: missing return statement[0m
-[0m[[0m[31merror[0m] [0m[0m  }[0m
-[0m[[0m[31merror[0m] [0m[0m  ^1 error[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\controllers\JobController.java:55:1:  error: method render in class jobList cannot be applied to given types;[0m
+[0m[[0m[31merror[0m] [0m[0m        return badRequest(views.html.jobList.render(asScala(jobs), form));[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^  required: scala.collection.Seq<Job>,Form<JobData>,Form<SearchForm>[0m
+[0m[[0m[31merror[0m] [0m[0m  found: scala.collection.immutable.Seq<Job>,Form<JobData>[0m
+[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\controllers\JobController.java:81:1:  error: method render in class jobList cannot be applied to given types;[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(views.html.jobList.render(asScala(jobs), form));[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^  required: scala.collection.Seq<Job>,Form<JobData>,Form<SearchForm>[0m
+[0m[[0m[31merror[0m] [0m[0m  found: scala.collection.immutable.Seq<Job>,Form<JobData>[0m
+[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\controllers\JobController.java:170:1:  error: method render in class search cannot be applied to given types;[0m
+[0m[[0m[31merror[0m] [0m[0m      return ok(views.html.search.render(asScala(results)));[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^  required: scala.collection.Seq<Job>,Form<SearchForm>[0m
+[0m[[0m[31merror[0m] [0m[0m  found: scala.collection.immutable.Seq<Job>[0m
+[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
+[0m[[0m[31merror[0m] [0m[0m3 errors[0m
