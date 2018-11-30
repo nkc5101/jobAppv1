@@ -40,7 +40,7 @@
     border: none;
     font-size: 17px;
   }
-
+  
   screen and (max-width: 1920px) {
     .topnav a, .topnav input[type=text] {
       float: none;
@@ -54,6 +54,13 @@
       border: 1px solid #ccc;
     }
   }
+  
+  #search-form {
+     width: 80%;
+     border: 4px solid black;
+  }
+  
+  
   </style>
   </head>
   <body>
@@ -62,7 +69,7 @@
     <a class="active" href="@routes.MainController.main()">Home</a>
     <a href="@routes.JobController.listJobs()">Jobs</a>
     <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
-    @helper.form(routes.JobController.search()) {
+    @helper.form(routes.JobController.search(), 'id -> "search-form") {
       @helper.CSRF.formField
       @helper.inputText(form("searchTerms"))
 
