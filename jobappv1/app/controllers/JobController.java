@@ -176,7 +176,7 @@ public class JobController extends Controller{
 
   public Result getApply(int index){
     if(controllers.ProfileController.getLoggedInUser() >= 0){
-      return ok(views.html.apply.render(jobList.getJobList().get(index), applyForm, index));
+      return ok(views.html.apply.render(jobList.getJobList().get(index), applyForm, searchForm, index));
     } else {
       return redirect(routes.ProfileController.login());
     }

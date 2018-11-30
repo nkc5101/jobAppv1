@@ -1,2 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m[Error] /Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/app/views/search.scala.html:93[0m
-[0m[[0m[31merror[0m] [0m[0m    <hr/>: Expected '"' but found 'EOF'[0m
+[0m[[0m[31merror[0m] [0m[0m[Error] C:\sbt\jobAppv1\jobappv1\app\views\apply.scala.html:87[0m
+[0m[[0m[31merror[0m] [0m[0m  </html>: Expected ')' but found 'EOF'[0m
