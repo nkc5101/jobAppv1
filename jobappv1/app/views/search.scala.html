@@ -56,10 +56,28 @@
   }
   
   #search-form {
-     width: 80%;
-     border: 4px solid black;
+      text-align: center;
+      height: 48px;
+      width: 70%;
+      background-color: black;
+      display: inline;
   }
   
+  #search-bar {
+      margin-left: auto;
+      margin-right: auto;
+      width: 30%;
+      height: 35px;
+      border: 2px solid black;
+      border-radius: 0px;
+      text-decoration-color: black;
+      font-size: 18px;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+  
+  #search-button {
+      ;
+  }
   
   </style>
   </head>
@@ -71,9 +89,9 @@
     <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
     @helper.form(routes.JobController.search(), 'id -> "search-form") {
       @helper.CSRF.formField
-      @helper.inputText(form("searchTerms"))
+      @helper.inputText(form("searchTerms"), 'id -> "search-bar")
 
-      <button type="submit">Search</button>
+      <button type="submit" id="search-button">Search</button>
     }
     <a href="@routes.ProfileController.logOut()">Log Out</a>
   </div>
