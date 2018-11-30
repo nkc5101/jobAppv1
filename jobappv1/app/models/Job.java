@@ -1,11 +1,14 @@
 package models;
 
+import java.util.ArrayList;
+
 public class Job{
 
   private String title;
   private double salary;
   private String description;
   private String company;
+  private ArrayList<Applicant> appliedUsers;
 
   public Job(String title, String description, double salary, String company){
 
@@ -13,6 +16,7 @@ public class Job{
     this.description = description;
     this.salary = salary;
     this.company = company;
+    this.appliedUsers = new ArrayList<>();
 
   }
 
@@ -58,6 +62,10 @@ public class Job{
 
   public void setCompany(String company){
     this.company = company;
+  }
+
+  public ArrayList<Applicant> getApplicants(){
+    return appliedUsers;
   }
 
 }

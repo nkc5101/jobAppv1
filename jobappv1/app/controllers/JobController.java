@@ -14,12 +14,14 @@ public class JobController extends Controller{
   private Form<JobData> form;
   private JobList jobList;
   private Form<SearchForm> searchForm;
+  private Form<ApplyForm> applyForm;
 
   @Inject
   public JobController(FormFactory formFactory){
 
     this.form = formFactory.form(JobData.class);
     this.searchForm = formFactory.form(SearchForm.class);
+    this.applyForm = formFactory.form(ApplyForm.class);
     this.jobList = new JobList();
 
   }
@@ -174,18 +176,18 @@ public class JobController extends Controller{
 
   public Result getApply(int index){
     if(controllers.ProfileController.getLoggedInUser() >= 0){
-      return ok(views.html.apply.render(jobList.getJobList().get(index)));
+      return ok(views.html.apply.render(jobList.getJobList().get(index), applyForm, index));
     } else {
       return redirect(routes.ProfileController.login());
     }
   }
 
-  public Result applyToJob(index){
+  public Result applyToJob(int index){
     if(controllers.ProfileController.getLoggedInUser() >= 0){
       final Form<ApplyForm> apply = applyForm.bindFromRequest();
       ApplyForm data = apply.get();
-      
-    }
-  }
 
+    }
+    return ok();
+  }
 }

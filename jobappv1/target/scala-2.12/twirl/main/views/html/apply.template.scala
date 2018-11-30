@@ -22,22 +22,23 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object apply extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object apply extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[Job,Form[ApplyForm],Int,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(job: Job, applyForm: Form[ApplyForm], index: Int):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any]()
+Seq[Any](format.raw/*1.52*/("""
+"""))
       }
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(job:Job,applyForm:Form[ApplyForm],index:Int): play.twirl.api.HtmlFormat.Appendable = apply(job,applyForm,index)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((Job,Form[ApplyForm],Int) => play.twirl.api.HtmlFormat.Appendable) = (job,applyForm,index) => apply(job,applyForm,index)
 
   def ref: this.type = this
 
@@ -46,11 +47,11 @@ Seq[Any]()
 
               /*
                   -- GENERATED --
-                  DATE: Fri Nov 30 15:53:47 EST 2018
-                  SOURCE: C:/sbt/jobappv1/app/views/apply.scala.html
-                  HASH: 282da6d6fc3be5f18bafd4f3e6904d0c508db341
-                  MATRIX: 
-                  LINES: 
+                  DATE: Fri Nov 30 16:28:13 EST 2018
+                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/apply.scala.html
+                  HASH: 7ecea532175bd5db1cd6eb393ff3ae5ac4fb8456
+                  MATRIX: 965->1|1110->51
+                  LINES: 28->1|33->1
                   -- GENERATED --
               */
           
