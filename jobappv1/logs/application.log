@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 2018-11-30 12:55:08,518 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-2 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
 2018-11-30 12:55:08,706 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+2018-11-30 11:39:33,374 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-4 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:39:33,564 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+>>>>>>> e2f76cc25a1ce6838cf792a6fc258546983f1b6f
 
     play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
+<<<<<<< HEAD
 2018-11-30 12:55:08,721 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
 2018-11-30 13:05:40,949 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-8 - 
 
@@ -278,10 +283,193 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[ error: cannot f
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
 2018-11-30 13:07:49,272 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-8 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
 2018-11-30 13:07:49,319 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+2018-11-30 11:39:33,570 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev)
+2018-11-30 11:41:11,112 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-10 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:41:11,148 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
+2018-11-30 11:41:11,148 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev)
+2018-11-30 11:42:49,682 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-10 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:42:49,715 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:42:49,715 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev)
+2018-11-30 11:43:20,352 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-10 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:43:20,384 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:43:20,384 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev)
+2018-11-30 11:44:09,588 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-10 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:44:09,621 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:44:09,621 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev)
+2018-11-30 11:45:20,174 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:45:20,203 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:45:20,203 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
+2018-11-30 11:45:55,050 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:45:55,078 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:45:55,078 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
+2018-11-30 11:47:05,577 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-11 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:47:05,608 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-11 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:47:05,608 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-11 - Application started (Dev)
+2018-11-30 11:47:45,103 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-11 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:47:45,131 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-11 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:47:45,131 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-11 - Application started (Dev)
+2018-11-30 11:48:48,567 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-11 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:48:48,594 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-11 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:48:48,594 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-11 - Application started (Dev)
+2018-11-30 11:49:23,910 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-8 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:49:23,936 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:49:23,936 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
+2018-11-30 11:49:44,796 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-8 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:49:44,818 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:49:44,819 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
+2018-11-30 11:50:05,816 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-8 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:50:05,841 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:50:05,841 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
+2018-11-30 11:50:47,856 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-8 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:50:47,881 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:50:47,881 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
+2018-11-30 11:51:11,450 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-8 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 11:51:11,481 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 11:51:11,482 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
+2018-11-30 12:03:02,869 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:03:02,892 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:03:02,892 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
+2018-11-30 12:04:10,833 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-18 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:04:10,857 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:04:10,857 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev)
+2018-11-30 12:04:55,551 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-18 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:04:55,572 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:04:55,572 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev)
+2018-11-30 12:05:23,912 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-18 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:05:23,934 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:05:23,934 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev)
+2018-11-30 12:06:03,570 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:06:03,593 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:06:03,593 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
+2018-11-30 12:06:17,227 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-17 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:06:17,250 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:06:17,250 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev)
+2018-11-30 12:07:30,705 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:07:30,724 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:07:30,724 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
+2018-11-30 12:07:50,412 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-16 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:07:50,436 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:07:50,436 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev)
+2018-11-30 12:08:20,345 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-17 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:08:20,373 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:08:20,373 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev)
+2018-11-30 12:08:32,337 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-17 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:08:32,360 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:08:32,360 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev)
+2018-11-30 12:09:35,312 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:09:35,334 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-11-30 12:09:35,334 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
+2018-11-30 12:09:50,111 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-11-30 12:09:50,133 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+>>>>>>> e2f76cc25a1ce6838cf792a6fc258546983f1b6f
+
+    play.filters.csrf.CSRFFilter
+    play.filters.hosts.AllowedHostsFilter
+
+<<<<<<< HEAD
 2018-11-30 13:07:49,319 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
 2018-11-30 15:53:47,164 [INFO] from play.core.server.AkkaHttpServer in pool-8-thread-2 - Stopping server...
+=======
+2018-11-30 12:09:50,133 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
+>>>>>>> e2f76cc25a1ce6838cf792a6fc258546983f1b6f
