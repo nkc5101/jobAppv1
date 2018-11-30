@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/conf/routes
-// @DATE:Tue Nov 27 18:03:44 EST 2018
+// @SOURCE:C:/sbt/jobappv1/conf/routes
+// @DATE:Fri Nov 30 12:55:00 EST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 

@@ -1,10 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/app/views/search.scala.html:71:52: unclosed character literal (or use " for string literal "id")[0m
-[0m[[0m[31merror[0m] [0m[0m    @helper.form(routes.JobController.search(), 'id' -> "search-form") {[0m
-[0m[[0m[31merror[0m] [0m[0m                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/app/views/search.scala.html:91:21: ')' expected but '<-' found.[0m
-[0m[[0m[31merror[0m] [0m[0m        @for((j, i) <- jobs.zipWithIndex) {[0m
-[0m[[0m[31merror[0m] [0m[0m                    ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/app/views/search.scala.html:100:10: ')' expected but '}' found.[0m
-[0m[[0m[31merror[0m] [0m[0m    <hr/>[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\controllers\JobController.java:183:33: identifier expected but `)' found.[0m
+[0m[[0m[31merror[0m] [0m[0m  public Result applyToJob(index){[0m
+[0m[[0m[31merror[0m] [0m[0m                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobappv1\app\controllers\JobController.java:191:1: `)' expected but `}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
