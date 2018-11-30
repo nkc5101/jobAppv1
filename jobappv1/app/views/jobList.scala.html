@@ -54,6 +54,36 @@
       border: 1px solid #ccc;
     }
   }
+  
+  #search-form {
+      text-align: center;
+      height: 90px;
+      width: 100%;
+      background-color: darkgray;
+      display: inline-block;
+  }
+  
+  #search-bar {
+      width: 600px;
+      height: 35px;
+      border: 2px solid black;
+      border-radius: 16px;
+      text-decoration-color: black;
+      font-size: 18px;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  }
+  
+  #search-button {
+      width: 90px;
+      height: 41px;
+      text-decoration-color: black;
+      font-size: 18px;
+      font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      background-color: white;
+      border: 3px solid black;
+      border-radius: 20px;
+  }
+  
   </style>
   </head>
   <body>
@@ -62,11 +92,16 @@
     <a class="active" href="@routes.MainController.main()">Home</a>
     <a href="@routes.JobController.listJobs()">Jobs</a>
     <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
-    @helper.form(routes.JobController.search()) {
-      @helper.CSRF.formField
-      @helper.inputText(searchForm("searchTerms"))
-
-      <button type="submit">Search</button>
+    @helper.form(routes.JobController.search(), 'id -> "search-form") {
+    @helper.CSRF.formField
+    
+    <table>
+        <tr>
+            <td>@helper.inputText(form("searchTerms"), 'id -> "search-bar")</td>
+            <td><button type="submit" id="search-button">Search</button></td>
+        </tr>
+    </table>
+    
     }
     <a href="@routes.ProfileController.logOut()">Log Out</a>
   </div>
