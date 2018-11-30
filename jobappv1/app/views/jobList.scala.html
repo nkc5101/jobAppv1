@@ -78,11 +78,12 @@
 
     <table>
         <thead>
-            <tr><th>Title</th><th>Description</th><th>Salary</th><th>Delete Job</th>
+            <tr><th>Title</th><th>Description</th><th>Salary</th><th>Company</th><th>Application</th><th>Delete Job</th>
         </thead>
         <tbody>
         @for((j, i) <- jobs.zipWithIndex) {
           <tr><td><a href="@routes.JobController.getJob(i)">@j.getTitle()</a></td><td>@j.getDescription</td><td>@j.getSalary()</td><td>@j.getCompany()</td>
+            <td><a href="@routes.JobController.getApply(i)">Apply</a></td>
             <td>@helper.form(routes.JobController.deleteJob(i)) {
 
               <button class="delete" href="@routes.JobController.deleteJob(i)">Delete</button>

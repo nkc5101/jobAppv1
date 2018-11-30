@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/conf/routes
-// @DATE:Fri Nov 30 16:47:44 EST 2018
+// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
+// @DATE:Fri Nov 30 17:30:19 EST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -115,7 +115,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:25
+  // @LINE:27
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -123,7 +123,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:27
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -183,6 +183,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:23
+    def getApply: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.getApply",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0)) + "/apply"})
+        }
+      """
+    )
+  
     // @LINE:15
     def listJobs: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.JobController.listJobs",
@@ -199,6 +209,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "search"})
+        }
+      """
+    )
+  
+    // @LINE:24
+    def applyToJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.applyToJob",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0)) + "/apply"})
         }
       """
     )

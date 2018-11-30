@@ -1,4 +1,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/conf/logback.xml,/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/target/scala-2.12/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/conf/application.conf,/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/target/scala-2.12/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/conf/routes,/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/target/scala-2.12/classes/routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\sbt\jobAppv1\jobappv1\conf\.DS_Store,C:\sbt\jobAppv1\jobappv1\target\scala-2.12\classes\.DS_Store)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\sbt\jobAppv1\jobappv1\conf\application.conf,C:\sbt\jobAppv1\jobappv1\target\scala-2.12\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\sbt\jobAppv1\jobappv1\conf\logback.xml,C:\sbt\jobAppv1\jobappv1\target\scala-2.12\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\sbt\jobAppv1\jobappv1\conf\routes,C:\sbt\jobAppv1\jobappv1\target\scala-2.12\classes\routes)[0m

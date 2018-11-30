@@ -18,11 +18,10 @@ import static play.libs.Scala.asScala;
 public class ProfileController extends Controller{
 
   private  Form<ProfileData> form;
-  private  List<Profile> profiles;
+  private  static List<Profile> profiles;
   private Form<SearchForm> searchForm;
   private Form<ProfileLogin> loginForm;
   private static int loggedInUser = -1;
-  private List<Document> docs;
 
   @Inject
   public ProfileController(FormFactory formFactory){
@@ -31,7 +30,7 @@ public class ProfileController extends Controller{
     this.loginForm = formFactory.form(ProfileLogin.class);
     this.searchForm = formFactory.form(SearchForm.class);
     this.profiles = com.google.common.collect.Lists.newArrayList(new Profile("Joe", "Shmoe", "username", "password", 22, "I am an application developer" ));
-    this.docs = com.google.common.collect.Lists.newArrayList();
+
   }
 
   public Result login(){
@@ -141,31 +140,6 @@ public class ProfileController extends Controller{
     return redirect(routes.ProfileController.login());
   }
 
-  public Result uploadDoc(){
-    Http.MultipartFormData<File> body = request().body().asMultipartFormData();
-    Http.MultipartFormData.FilePart<File> document = body.getFile("document");
-    if(document != null){
-      String fileName = document.getFilename();
-      File file = document.getFile();
-      docs.add(new Document(fileName, file));
-      return ok(views.html.main.render(searchForm));
-    } else {
-      return badRequest();
-    }
-  }
-
-  public Result deleteDoc(int id){
-    if(loggedInUser >= 0){
-      if(id < docs.size() && id >= 0){
-        docs.remove(id);
-        return redirect(routes.MainController.main());
-      } else {
-        return badRequest();
-      }
-    } else {
-      return redirect(routes.ProfileController.login());
-    }
-  }
 
   public Result updateProfile(int id){
     if(loggedInUser >= 0){
@@ -195,5 +169,9 @@ public class ProfileController extends Controller{
 
     }
 
+}
+
+public static Profile getLoggedInUserProfile(){
+  return profiles.get(loggedInUser);
 }
 }

@@ -1,4 +1,10 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\models\JobList.java:10:1:  error: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m    appliedUsers = new ArrayList<>();[0m
-[0m[[0m[31merror[0m] [0m[0m    ^  symbol:   variable appliedUsers[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class JobList[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java:189:1:  error: method getApply in class ReverseJobController cannot be applied to given types;[0m
+[0m[[0m[31merror[0m] [0m[0m        return redirect(routes.JobController.getApply());[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^  required: int[0m
+[0m[[0m[31merror[0m] [0m[0m  found: no arguments[0m
+[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\controllers\JobController.java:193:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m        jobList.getJobList.get(index).getApplicants().add(new Applicant(user, data.getResume(), data.getComments()));[0m
+[0m[[0m[31merror[0m] [0m[0m               ^  symbol:   variable getJobList[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable jobList of type JobList[0m
+[0m[[0m[31merror[0m] [0m[0m2 errors[0m

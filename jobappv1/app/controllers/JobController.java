@@ -185,9 +185,17 @@ public class JobController extends Controller{
   public Result applyToJob(int index){
     if(controllers.ProfileController.getLoggedInUser() >= 0){
       final Form<ApplyForm> apply = applyForm.bindFromRequest();
-      ApplyForm data = apply.get();
+      if(apply.hasErrors()){
+        return redirect(routes.JobController.getApply(index));
+      } else {
+        ApplyForm data = apply.get();
+        Profile user = controllers.ProfileController.getLoggedInUserProfile();
+        jobList.getJobList().get(index).getApplicants().add(new Applicant(user, data.getResume(), data.getComments()));
+        return redirect(routes.JobController.listJobs());
+      }
 
+    } else {
+      return redirect(routes.ProfileController.login());
     }
-    return ok();
   }
 }

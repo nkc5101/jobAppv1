@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/conf/routes
-// @DATE:Fri Nov 30 16:47:44 EST 2018
+// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
+// @DATE:Fri Nov 30 17:30:19 EST 2018
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   MainController_0: controllers.MainController,
   // @LINE:15
   JobController_2: controllers.JobController,
-  // @LINE:25
+  // @LINE:27
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     MainController_0: controllers.MainController,
     // @LINE:15
     JobController_2: controllers.JobController,
-    // @LINE:25
+    // @LINE:27
     Assets_1: controllers.Assets
   ) = this(errorHandler, ProfileController_3, MainController_0, JobController_2, Assets_1, "/")
 
@@ -62,6 +62,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.ProfileController.logOut()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """profiles/""" + "$" + """id<[^/]+>""", """controllers.ProfileController.updateProfile(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search""", """controllers.JobController.search()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """jobs/""" + "$" + """id<[^/]+>/apply""", """controllers.JobController.getApply(id:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """jobs/""" + "$" + """id<[^/]+>/apply""", """controllers.JobController.applyToJob(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -340,11 +342,47 @@ class Routes(
     )
   )
 
-  // @LINE:25
-  private[this] lazy val controllers_Assets_versioned15_route = Route("GET",
+  // @LINE:23
+  private[this] lazy val controllers_JobController_getApply15_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("jobs/"), DynamicPart("id", """[^/]+""",true), StaticPart("/apply")))
+  )
+  private[this] lazy val controllers_JobController_getApply15_invoker = createInvoker(
+    JobController_2.getApply(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.JobController",
+      "getApply",
+      Seq(classOf[Int]),
+      "GET",
+      this.prefix + """jobs/""" + "$" + """id<[^/]+>/apply""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:24
+  private[this] lazy val controllers_JobController_applyToJob16_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("jobs/"), DynamicPart("id", """[^/]+""",true), StaticPart("/apply")))
+  )
+  private[this] lazy val controllers_JobController_applyToJob16_invoker = createInvoker(
+    JobController_2.applyToJob(fakeValue[Int]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.JobController",
+      "applyToJob",
+      Seq(classOf[Int]),
+      "POST",
+      this.prefix + """jobs/""" + "$" + """id<[^/]+>/apply""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:27
+  private[this] lazy val controllers_Assets_versioned17_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned15_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned17_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -451,10 +489,22 @@ class Routes(
         controllers_JobController_search14_invoker.call(JobController_2.search())
       }
   
-    // @LINE:25
-    case controllers_Assets_versioned15_route(params@_) =>
+    // @LINE:23
+    case controllers_JobController_getApply15_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_JobController_getApply15_invoker.call(JobController_2.getApply(id))
+      }
+  
+    // @LINE:24
+    case controllers_JobController_applyToJob16_route(params@_) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_JobController_applyToJob16_invoker.call(JobController_2.applyToJob(id))
+      }
+  
+    // @LINE:27
+    case controllers_Assets_versioned17_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned15_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned17_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }
