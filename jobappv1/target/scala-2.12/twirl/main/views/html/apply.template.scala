@@ -30,8 +30,7 @@ object apply extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
       {
 
 
-Seq[Any](format.raw/*1.52*/("""
-"""))
+Seq[Any]()
       }
     }
   }
@@ -47,11 +46,11 @@ Seq[Any](format.raw/*1.52*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Nov 30 16:28:13 EST 2018
-                  SOURCE: C:/sbt/jobAppv1/jobappv1/app/views/apply.scala.html
-                  HASH: 7ecea532175bd5db1cd6eb393ff3ae5ac4fb8456
-                  MATRIX: 965->1|1110->51
-                  LINES: 28->1|33->1
+                  DATE: Fri Nov 30 16:47:45 EST 2018
+                  SOURCE: /Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/app/views/apply.scala.html
+                  HASH: a8119aef47df3d02503c8e54c465a922bb67529f
+                  MATRIX: 965->1
+                  LINES: 28->1
                   -- GENERATED --
               */
           
