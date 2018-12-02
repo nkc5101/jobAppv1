@@ -12,4 +12,16 @@ public class Applicant{
     this.resume = resume;
     this.comments = comments;
   }
+
+  public File getResume(){
+    return resume;
+  }
+
+  public Profile getUser(){
+    return user;
+  }
+
+  public String getComments(){
+    return comments;
+  }
 }

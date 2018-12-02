@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/conf/routes
-// @DATE:Fri Nov 30 18:02:09 EST 2018
+// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
+// @DATE:Sun Dec 02 14:20:00 EST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -115,7 +115,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:27
+  // @LINE:30
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -123,7 +123,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:27
+    // @LINE:30
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -193,6 +193,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:25
+    def getApplications: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.getApplications",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0)) + "/applications"})
+        }
+      """
+    )
+  
     // @LINE:15
     def listJobs: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.JobController.listJobs",
@@ -219,6 +229,16 @@ package controllers.javascript {
       """
         function(id0) {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0)) + "/apply"})
+        }
+      """
+    )
+  
+    // @LINE:26
+    def getApplicantsFiles: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.JobController.getApplicantsFiles",
+      """
+        function(id0,applicant1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "jobs/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0)) + "/applications/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("applicant", applicant1))})
         }
       """
     )

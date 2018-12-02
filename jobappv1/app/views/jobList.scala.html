@@ -54,7 +54,7 @@
       border: 1px solid #ccc;
     }
   }
-  
+
   #search-form {
       text-align: center;
       height: 90px;
@@ -62,7 +62,7 @@
       background-color: darkgray;
       display: inline-block;
   }
-  
+
   #search-bar {
       width: 600px;
       height: 35px;
@@ -72,7 +72,7 @@
       font-size: 18px;
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   }
-  
+
   #search-button {
       width: 90px;
       height: 41px;
@@ -83,7 +83,7 @@
       border: 3px solid black;
       border-radius: 20px;
   }
-  
+
   </style>
   </head>
   <body>
@@ -94,14 +94,14 @@
     <a href="@routes.ProfileController.getProfile(controllers.ProfileController.getLoggedInUser())">Profile</a>
     @helper.form(routes.JobController.search(), 'id -> "search-form") {
     @helper.CSRF.formField
-    
+
     <table>
         <tr>
             <td>@helper.inputText(form("searchTerms"), 'id -> "search-bar")</td>
             <td><button type="submit" id="search-button">Search</button></td>
         </tr>
     </table>
-    
+
     }
     <a href="@routes.ProfileController.logOut()">Log Out</a>
   </div>
@@ -113,12 +113,12 @@
 
     <table>
         <thead>
-            <tr><th>Title</th><th>Description</th><th>Salary</th><th>Company</th><th>Application</th><th>Delete Job</th>
+            <tr><th>Title</th><th>Description</th><th>Salary</th><th>Company</th><th>Application</th><th>Applicants</th><th>Delete Job</th>
         </thead>
         <tbody>
         @for((j, i) <- jobs.zipWithIndex) {
           <tr><td><a href="@routes.JobController.getJob(i)">@j.getTitle()</a></td><td>@j.getDescription</td><td>@j.getSalary()</td><td>@j.getCompany()</td>
-            <td><a href="@routes.JobController.getApply(i)">Apply</a></td>
+            <td><a href="@routes.JobController.getApply(i)">Apply</a></td><td><a href="@routes.JobController.getApplications(i)">View Applications</a></td>
             <td>@helper.form(routes.JobController.deleteJob(i)) {
 
               <button class="delete" href="@routes.JobController.deleteJob(i)">Delete</button>

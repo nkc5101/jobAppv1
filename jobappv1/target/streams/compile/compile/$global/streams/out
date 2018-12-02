@@ -1,6 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\apply.scala.html:82:22: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : String("comments")[0m
-[0m[[0m[31merror[0m] [0m[0m required: play.api.data.Field[0m
-[0m[[0m[31merror[0m] [0m[0m    @helper.textarea("comments")[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\jobList.scala.html:121:110: value getApplicants is not a member of controllers.ReverseJobController[0m
+[0m[[0m[31merror[0m] [0m[0m            <td><a href="@routes.JobController.getApply(i)">Apply</a></td><td><a href="@routes.JobController.getApplicants(i)">View Applications</a></td>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                             ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

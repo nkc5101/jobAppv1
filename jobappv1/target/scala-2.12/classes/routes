@@ -22,6 +22,9 @@ POST   /profiles/:id               controllers.ProfileController.updateProfile(i
 POST   /search                     controllers.JobController.search()
 GET    /jobs/:id/apply             controllers.JobController.getApply(id:Int)
 POST   /jobs/:id/apply             controllers.JobController.applyToJob(id:Int)
+GET    /jobs/:id/applications      controllers.JobController.getApplications(id:Int)
+GET   /jobs/:id/applications/:applicant controllers.JobController.getApplicantsFiles(id:Int, applicant:Int)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

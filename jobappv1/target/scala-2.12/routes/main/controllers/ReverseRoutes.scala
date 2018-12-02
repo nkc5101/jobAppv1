@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/wyattnaftulin/Documents/IST411/jobAppv1/jobappv1/conf/routes
-// @DATE:Fri Nov 30 18:02:09 EST 2018
+// @SOURCE:C:/sbt/jobAppv1/jobappv1/conf/routes
+// @DATE:Sun Dec 02 14:20:00 EST 2018
 
 import play.api.mvc.Call
 
@@ -85,14 +85,14 @@ package controllers {
   
   }
 
-  // @LINE:27
+  // @LINE:30
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:27
+    // @LINE:30
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -137,6 +137,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "jobs/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)) + "/apply")
     }
   
+    // @LINE:25
+    def getApplications(id:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "jobs/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)) + "/applications")
+    }
+  
     // @LINE:15
     def listJobs(): Call = {
       
@@ -153,6 +159,12 @@ package controllers {
     def applyToJob(id:Int): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "jobs/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)) + "/apply")
+    }
+  
+    // @LINE:26
+    def getApplicantsFiles(id:Int, applicant:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "jobs/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)) + "/applications/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("applicant", applicant)))
     }
   
   }

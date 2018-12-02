@@ -7,6 +7,7 @@ import java.util.List;
 import models.*;
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.io.File;
 
 @Singleton
 public class JobController extends Controller{
@@ -194,6 +195,22 @@ public class JobController extends Controller{
         return redirect(routes.JobController.listJobs());
       }
 
+    } else {
+      return redirect(routes.ProfileController.login());
+    }
+  }
+
+  public Result getApplications(int index){
+    if(controllers.ProfileController.getLoggedInUser() >= 0){
+      return ok(views.html.applications.render(asScala(jobList.getJobList().get(index).getApplicants()), searchForm, index));
+    } else {
+      return redirect(routes.ProfileController.login());
+    }
+  }
+
+  public Result getApplicantsFiles(int index, int applicantNumber){
+    if(controllers.ProfileController.getLoggedInUser() >= 0){
+      return ok(jobList.getJobList().get(index).getApplicants().get(applicantNumber).getResume());
     } else {
       return redirect(routes.ProfileController.login());
     }
