@@ -8,6 +8,8 @@ import models.*;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 @Singleton
 public class JobController extends Controller{
@@ -183,18 +185,16 @@ public class JobController extends Controller{
     }
   }
 
-  public Result applyToJob(int index){
+@BodyParser.Of(value = BodyParser.MultipartFormData.class)
+  public Result applyToJob(int index) throws IOException{
     if(controllers.ProfileController.getLoggedInUser() >= 0){
-      final Form<ApplyForm> apply = applyForm.bindFromRequest();
-      if(apply.hasErrors()){
-        return redirect(routes.JobController.getApply(index));
-      } else {
-        ApplyForm data = apply.get();
-        Profile user = controllers.ProfileController.getLoggedInUserProfile();
-        jobList.getJobList().get(index).getApplicants().add(new Applicant(user, data.getResume(), data.getComments()));
-        return redirect(routes.JobController.listJobs());
-      }
 
+        final Http.MultipartFormData<File> formData = request().body().asMultipartFormData();
+        final Http.MultipartFormData.FilePart<File> filePart = formData.getFile("resume");
+        final File file = filePart.getFile();
+        Profile user = controllers.ProfileController.getLoggedInUserProfile();
+        jobList.getJobList().get(index).getApplicants().add(new Applicant(user, file));
+        return redirect(routes.JobController.listJobs());
     } else {
       return redirect(routes.ProfileController.login());
     }
@@ -210,6 +210,8 @@ public class JobController extends Controller{
 
   public Result getApplicantsFiles(int index, int applicantNumber){
     if(controllers.ProfileController.getLoggedInUser() >= 0){
+      response().setContentType("application/x-download");
+      response().setHeader("Conent-disposition", "attachment; filename=resume.docx");
       return ok(jobList.getJobList().get(index).getApplicants().get(applicantNumber).getResume());
     } else {
       return redirect(routes.ProfileController.login());

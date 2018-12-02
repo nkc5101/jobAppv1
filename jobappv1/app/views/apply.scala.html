@@ -75,11 +75,10 @@ screen and (max-width: 1920px) {
 </div>
 <body>
   <h3>Apply to @job.getTitle()</h3>
-  @helper.form(routes.JobController.applyToJob(index)){
+  @helper.form(action = routes.JobController.applyToJob(index), 'enctype -> "multipart/form-data"){
     @helper.CSRF.formField
-    <p>Please upload your file and any additional comments you would like to make</p>
-    @helper.inputFile(field=applyForm("resume"))
-    @helper.textarea(field=applyForm("comments"))
+    <p>Please upload your resume</p>
+    @helper.inputFile(applyForm("resume"))
     <button type="submit">Apply</button>
   }
   </body>

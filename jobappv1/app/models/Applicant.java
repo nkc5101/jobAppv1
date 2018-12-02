@@ -5,12 +5,10 @@ import java.io.File;
 public class Applicant{
   private Profile user;
   private File resume;
-  private String comments;
 
-  public Applicant(Profile user, File resume, String comments){
+  public Applicant(Profile user, File resume){
     this.user = user;
     this.resume = resume;
-    this.comments = comments;
   }
 
   public File getResume(){
@@ -21,7 +19,4 @@ public class Applicant{
     return user;
   }
 
-  public String getComments(){
-    return comments;
-  }
 }

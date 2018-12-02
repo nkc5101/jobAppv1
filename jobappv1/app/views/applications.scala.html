@@ -75,11 +75,11 @@ screen and (max-width: 1920px) {
 </div>
 <table>
   <thead>
-    <tr><th>Profile</th><th>Resume</th><th>Additional Comments</th>
+    <tr><th>Profile</th><th>Resume</th>
   </thead>
   <tbody>
     @for((j, i) <- applications.zipWithIndex) {
-      <tr><td>@j.getUser().getUsername()</td><td><a href="@routes.JobController.getApplicantsFiles(index, i)">Download</a></td><td>@j.getComments()</td>
+      <tr><td>@j.getUser().getUsername()</td><td><a href="@routes.JobController.getApplicantsFiles(index, i)">Download</a></td>
       </tr>
   </tbody>
 </table>

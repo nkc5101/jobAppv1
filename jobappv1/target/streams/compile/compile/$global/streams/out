@@ -1,4 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0mC:\sbt\jobAppv1\jobappv1\app\views\jobList.scala.html:121:110: value getApplicants is not a member of controllers.ReverseJobController[0m
-[0m[[0m[31merror[0m] [0m[0m            <td><a href="@routes.JobController.getApply(i)">Apply</a></td><td><a href="@routes.JobController.getApplicants(i)">View Applications</a></td>[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                             ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[0minfo[0m] [0m[0mNote: C:\sbt\jobappv1\app\controllers\JobController.java uses or overrides a deprecated API.[0m
+[0m[[0m[0minfo[0m] [0m[0mNote: Recompile with -Xlint:deprecation for details.[0m
