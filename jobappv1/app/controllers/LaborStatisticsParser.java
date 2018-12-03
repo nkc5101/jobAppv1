@@ -15,14 +15,22 @@ public class LaborStatisticsParser {
         Element table = document.select("tbody").get(2);
         
         Elements oddRows = table.select("tr.odd");
-        Elements evenRows = table.select("tr.even")
-
+        Elements evenRows = table.select("tr.even");
+        
+        //try{
+        //    Elements oddRowCells = oddRows.children();
+        //    Elements evenRowCells = evenRows.children();
+        //}
+        //catch(IOException e){
+        //    System.out.println("Exception");
+        //}
+        
         Elements oddRowCells = oddRows.children();
         Elements evenRowCells = evenRows.children();
-
+        
         ArrayList occupations = new ArrayList();
         ArrayList annualMeanWages = new ArrayList();
-
+        
         for (int i = 0; i < oddRowCells.size(); i++) {
             Element oddRowCell = oddRowCells.get(i);
             String cellClass = oddRowCell.attr("class");
@@ -37,7 +45,7 @@ public class LaborStatisticsParser {
                 }
             }
         }
-
+        
         for (int i = 0; i < evenRowCells.size(); i++) {
             Element evenRowCell = evenRowCells.get(i);
             String cellClass = evenRowCell.attr("class");
