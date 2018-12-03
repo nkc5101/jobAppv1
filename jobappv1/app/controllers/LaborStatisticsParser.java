@@ -25,11 +25,11 @@ public class LaborStatisticsParser {
         //    System.out.println("Exception");
         //}
         
-        Elements oddRowCells = oddRows.children();
-        Elements evenRowCells = evenRows.children();
+        Elements oddRowCells = oddRows.select("td");
+        Elements evenRowCells = evenRows.select("td");
         
-        ArrayList occupations = new ArrayList();
-        ArrayList annualMeanWages = new ArrayList();
+        ArrayList<String>occupations = new ArrayList<String>();
+        ArrayList<String>annualMeanWages = new ArrayList<String>();
         
         for (int i = 0; i < oddRowCells.size(); i++) {
             Element oddRowCell = oddRowCells.get(i);
@@ -38,7 +38,7 @@ public class LaborStatisticsParser {
                 Elements cellChildren = oddRowCell.children();
                 for (int j = 0; j < cellChildren.size(); j++) {
                     Element cellChild = cellChildren.get(j);
-                    if (cellChild.tagName("a")) {
+                    if (cellChild.tagName("a")!=null) {
                         String occupation = cellChild.text();
                         occupations.add(occupation);
                     }
